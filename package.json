@@ -5,7 +5,7 @@
   "author": "avil13 <13.avil@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "eleventy --input=src --output=docs"
+    "build": "eleventy --input=src --output=dist"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0"
