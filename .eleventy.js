@@ -2,6 +2,9 @@ const path = require('path');
 const htmlmin = require('html-minifier');
 const CleanCSS = require('clean-css');
 const Terser = require('terser');
+const ts = require('typescript');
+const tsConfig = require('./tsconfig.json');
+
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 // vars
@@ -30,6 +33,12 @@ module.exports = function (eleventyConfig) {
 
   // CODE Highlite
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  // TS
+  eleventyConfig.addFilter('ts', function(code) {
+    const result = ts.transpileModule(code, tsConfig);
+    return result.outputText;
+  });
 
   // Minify JS
   eleventyConfig.addFilter('jsmin', function (code) {
@@ -67,6 +76,10 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: 'liquid',
     htmlTemplateEngine: 'liquid',
     dataTemplateEngine: 'liquid',
+
+    site: {
+      url: 'AVIL-13',
+    },
 
     dir: {
       output: '_site',

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "sourceMap": false,
+    "target": "ES5",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "allowJs": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "lib": ["ESNext", "dom"],
+    "types": []
+  },
+  "exclude": [
+    "node_modules",
+    "**/_site",
+    "**/dist",
+    ".yarn/releases/*",
+    "**/__mocks__/**/*",
+    "**/__tests__/**/*",
+    "**/build/**/*",
+    "**/build-es5/**/*"
+  ]
+}

@@ -42,17 +42,11 @@
 
   hello
 
-  <pre>
-  -->
-  {% include scripts/app.js %}
-  </pre>
-
   <!-- app.js -->
   {% capture appJs %}
-  {% include scripts/app.js %}
+  {% include scripts/app.ts %}
   {% endcapture %}
-  {{ appJs }}
-  <script>{{ appJs | jsmin | safe }}</script>
+  <script>{{ appJs | ts | jsmin | safe }}</script>
   <!-- /app.js -->
 
 </body>
