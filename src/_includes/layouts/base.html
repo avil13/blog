@@ -25,6 +25,9 @@
   <meta name="twitter:site" content="{{ site.social_meta.twitter }}" />
   <meta name="twitter:creator" content="{{ site.social_meta.twitter }}" />
   {% endif %}
+
+  <!-- bulma -->
+  <link rel="stylesheet" href="/assets/css/bulma.css">
   <!-- code.css -->
   {% capture cssCode %}
   {% include stylesheets/code.css %}
@@ -33,8 +36,11 @@
   <!-- /code.css -->
 </head>
 
-<body class="p-4 md:p-6 bg-grey-lightest">
-  <div class="sm:max-w-sm mx-auto">
+<body>
+
+  {{ site }}
+
+  <div>
     {% include partials/header.html %}
     {{ content }}
     {% include partials/footer.html %}

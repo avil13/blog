@@ -1,20 +1,22 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "avil13 <13.avil@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "eleventy --serve --watch --dryrun --port=1234",
     "dev": "eleventy --serve --watch --dryrun --port=1234",
-    "dev:dbug": "DEBUG=Eleventy* eleventy --serve --watch --dryrun --port=1234",
-    "build": "eleventy"
+    "dev:debug": "DEBUG=Eleventy* eleventy --serve --watch --dryrun --port=1234",
+    "build": "npm run build:create && npm run build:optimize",
+    "build:create": "eleventy",
+    "build:optimize": "node post-build.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "clean-css": "^4.2.3",
     "html-minifier": "^4.0.0",
+    "purify-css": "^1.2.5",
     "terser": "^4.7.0",
     "typescript": "^3.9.3"
   }

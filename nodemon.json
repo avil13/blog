@@ -1,0 +1,14 @@
+{
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    ".git",
+    "node_modules",
+    "dist",
+    "_site"
+  ],
+  "delay": "1500",
+  "watch": ["src/*"],
+  "exec": "npm run build:create",
+  "ext": "ts,js,vue,json,css,html,md"
+}

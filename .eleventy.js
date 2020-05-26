@@ -72,10 +72,11 @@ module.exports = function (eleventyConfig) {
   // return Config
   return {
     pathPrefix: '/',
-    templateFormats: ['md', 'njk', 'html', 'liquid'],
+    templateFormats: ['md', 'njk', 'html', 'liquid', 'css'],
     markdownTemplateEngine: 'liquid',
     htmlTemplateEngine: 'liquid',
     dataTemplateEngine: 'liquid',
+    passthroughFileCopy: true,
 
     site: {
       url: 'AVIL-13',
