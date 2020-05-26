@@ -1,12 +1,12 @@
 ---
 layout: base
+title: Первая запись
+description: Описание
+subtitle: Первая запись SUb
 ---
-# Main
 
-# this is my blog rc0.1
+# Первая запись в MD
 
 ```js
 const h = () => true;
 ```
-
----

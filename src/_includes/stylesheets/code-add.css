@@ -1,0 +1,6 @@
+/*
+  Мои допиливания
+*/
+pre[class*='language-'] {
+  border-radius: 2px;
+}

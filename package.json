@@ -16,6 +16,10 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "clean-css": "^4.2.3",
     "html-minifier": "^4.0.0",
+    "imagemin": "^7.0.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
     "purify-css": "^1.2.5",
     "terser": "^4.7.0",
     "typescript": "^3.9.3"

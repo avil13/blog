@@ -31,6 +31,7 @@
   <!-- code.css -->
   {% capture cssCode %}
   {% include stylesheets/code.css %}
+  {% include stylesheets/code-add.css %}
   {% endcapture %}
   <style>{{ cssCode | cssmin | safe }}</style>
   <!-- /code.css -->
@@ -42,11 +43,9 @@
 
   <div>
     {% include partials/header.html %}
-    {{ content }}
+    {% include partials/container.html %}
     {% include partials/footer.html %}
   </div>
-
-  hello
 
   <!-- app.js -->
   {% capture appJs %}

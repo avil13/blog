@@ -78,9 +78,7 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'liquid',
     passthroughFileCopy: true,
 
-    site: {
-      url: 'AVIL-13',
-    },
+    url: 'avil13.com',
 
     dir: {
       output: '_site',
