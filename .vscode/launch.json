@@ -12,6 +12,15 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/node_modules/.bin/eleventy"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "current file",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}"
         }
     ]
 }

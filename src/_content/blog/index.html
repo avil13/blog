@@ -1,0 +1,17 @@
+---
+layout: base
+title: Блог о разработке
+description: Список статей в блоге AVIL13.com
+---
+
+<h1>Список статей</h1>
+
+<div class="list is-hoverable">
+{%- for item in collections.post %}
+{%- unless item.data.excludeSitemap == true %}
+
+<a href="{{ item.url }}" class="list-item">{{ item.data.title }}</a>
+
+{%- endunless %}
+{%- endfor %}
+</div>

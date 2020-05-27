@@ -8,7 +8,7 @@
     "_site"
   ],
   "delay": "1500",
-  "watch": ["src/*"],
-  "exec": "npm run build:create",
+  "watch": ["src/*", "./tsconfig.json", "./.eleventy.js"],
+  "exec": "npm run build",
   "ext": "ts,js,vue,json,css,html,md"
 }

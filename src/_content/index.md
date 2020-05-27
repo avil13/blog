@@ -9,4 +9,12 @@ subtitle: Первая запись SUb
 
 ```js
 const h = () => true;
+const h = () => true;
+const h = () => true;
+const h = () => true;
+const h = () => true;
+const h = () => true;
+const h = () => true;
+const h = () => true;
+const h = () => true;
 ```

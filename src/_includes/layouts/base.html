@@ -27,7 +27,7 @@
   {% endif %}
 
   <!-- bulma -->
-  <link rel="stylesheet" href="/assets/css/bulma.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <!-- code.css -->
   {% capture cssCode %}
   {% include stylesheets/code.css %}
@@ -35,24 +35,23 @@
   {% endcapture %}
   <style>{{ cssCode | cssmin | safe }}</style>
   <!-- /code.css -->
+
+  <!-- app.js -->
+  {% capture appJs %}
+  {% include scripts/app.ts %}
+  {% include scripts/lite-yt-embed.ts %}
+  {% endcapture %}
+  <script>{{ appJs | ts | jsmin | safe }}</script>
+  <!-- /app.js -->
 </head>
 
 <body>
-
-  {{ site }}
 
   <div>
     {% include partials/header.html %}
     {% include partials/container.html %}
     {% include partials/footer.html %}
   </div>
-
-  <!-- app.js -->
-  {% capture appJs %}
-  {% include scripts/app.ts %}
-  {% endcapture %}
-  <script>{{ appJs | ts | jsmin | safe }}</script>
-  <!-- /app.js -->
 
 </body>
 
