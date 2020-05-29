@@ -1,20 +1,24 @@
-// CSS
+//#region [ CSS ]
 const purify = require("purify-css")
 const content = ['./_site/**/*.html'];
-const css = ['./_site/assets/css/bulma.css'];
+const css = [
+  // builded styles
+  './_site/assets/css/bulma.css',
+  './_site/assets/css/style.css',
+];
 const options = {
   // Will write purified CSS to this file.
-  output: './_site/assets/css/bulma.css',
+  output: './_site/assets/css/style.css',
   minify: true,
   info: true,
   whitelist: ['*-active'],
 };
 
 purify(content, css, options);
-// end CSS
+//#endregion
 
 
-// IMAGE
+//#region [ IMAGE ]
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminSvgo = require('imagemin-svgo');
@@ -45,4 +49,4 @@ const imageminOptipng = require('imagemin-optipng');
     ...files.map(v => ' - ' + v.destinationPath.replace(/^_site\//, ''))
   ].join('\n'));
 })();
-// end IMAGE
+//#endregion
