@@ -15,6 +15,22 @@ const options = {
 };
 
 purify(content, css, options);
+// code css
+const codeCss = './_site/assets/css/code.css';
+const CleanCSS = require('clean-css');
+const fs = require('fs');
+const sourceCodeCss = fs.readFileSync(codeCss, 'utf8');
+
+new CleanCSS({
+    returnPromise: true
+  })
+  .minify(sourceCodeCss)
+  .then(function (output) {
+    fs.writeFileSync(codeCss, output.styles)
+  })
+  .catch(function (error) {
+    console.error(error)
+  });
 //#endregion
 
 

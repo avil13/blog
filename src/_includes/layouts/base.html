@@ -51,13 +51,7 @@
 
   <!-- bulma -->
   <link rel="stylesheet" href="/assets/css/style.css">
-  <!-- code.css -->
-  {% capture cssCode %}
-  {% include stylesheets/code.css %}
-  {% include stylesheets/code-add.css %}
-  {% endcapture %}
-  <style>{{ cssCode | cssmin | safe }}</style>
-  <!-- /code.css -->
+  <link rel="stylesheet" href="/assets/css/code.css">
 
   <!-- app.js -->
   {% capture appJs %}
