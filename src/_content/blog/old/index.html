@@ -6,11 +6,12 @@ description: Список статей в блоге AVIL13.com
 
 <h1>Список старых статей</h1>
 
-<div class="list is-hoverable">
+<div class="is-hoverable">
 {%- for item in collections.old %}
 {%- unless item.data.excludeSitemap == true %}
 
-<a href="{{ item.url }}" class="list-item">{{ item.data.title }}</a>
+<div class="is-divider"></div>
+<a href="{{ item.url }}" class="">{{ item.data.title }}</a>
 
 {%- endunless %}
 {%- endfor %}

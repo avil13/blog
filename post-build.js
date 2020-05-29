@@ -11,7 +11,7 @@ const options = {
   output: './_site/assets/css/style.css',
   minify: true,
   info: true,
-  whitelist: ['*-active'],
+  whitelist: ['*-active', 'is-divider*'],
 };
 
 purify(content, css, options);
