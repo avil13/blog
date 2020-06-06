@@ -1,31 +1,15 @@
-<section class="hero ">
+<div class="container">
+  <section class="section">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div class="content is-medium">
+          {% if subtitle %}
+          <h2 class="subtitle is-5 has-text-grey is-centered">{{ subtitle }}</h2>
+          {% endif %}
 
-  <div class="hero-body">
-    <div class="container">
-      {% comment %}
-      <div class="columns">
-        <div class="column is-8 is-offset-2">
-          <figure class="image is-16by9">
-            <img src="../images/first-post.png" alt="">
-          </figure>
+          {{ content }}
         </div>
       </div>
-      {% endcomment %}
-
-      <section class="section">
-        <div class="columns">
-          <div class="column is-8 is-offset-2">
-            <div class="content is-medium">
-              {% if subtitle %}
-              <h2 class="subtitle is-5 has-text-grey is-centered">{{ subtitle }}</h2>
-              {% endif %}
-
-              {{ content }}
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
-  </div>
-</section>
+  </section>
+</div>
