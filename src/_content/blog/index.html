@@ -8,7 +8,7 @@ subtitle: Все статьи
 <h1>Список статей</h1>
 
 <div class="is-hoverable">
-{%- for item in collections.post %}
+{%- for item in collections.post reversed %}
 {%- unless item.data.excludeSitemap == true %}
 
 <div class="is-divider"></div>
