@@ -1,20 +1,13 @@
 ---
 layout: base
-title: Первая запись
-description: Описание
-subtitle: Первая запись SUb
+description: блог о разработке и программировании
+imgBg: /assets/images/index-bg.jpg
 ---
 
-# Первая запись в MD
+# Сайт AVIL13
 
-```js
-const h = () => true;
-const h = () => true;
-const h = () => true;
-const h = () => true;
-const h = () => true;
-const h = () => true;
-const h = () => true;
-const h = () => true;
-const h = () => true;
-```
+Это главная страница сайта web разработчика.
+
+Как обычно здесь нет ничего определенно полезного, но без нее ни как.
+
+То ради чего создавался этот сайт, находится внутри, но то, насколько это важно, зависит только от Тебя…

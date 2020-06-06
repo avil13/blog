@@ -33,14 +33,14 @@ new CleanCSS({
   });
 //#endregion
 
-
+//*
 //#region [ IMAGE ]
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminSvgo = require('imagemin-svgo');
 const imageminOptipng = require('imagemin-optipng');
 
-(async () => {
+const impOptimize = (async () => {
   const files = await imagemin(
     [
       'src/_content/assets/images/**/*.{jpg,jpeg,png,JPG,JPEG,PNG,svg}'
@@ -64,5 +64,7 @@ const imageminOptipng = require('imagemin-optipng');
     '',
     ...files.map(v => ' - ' + v.destinationPath.replace(/^_site\//, ''))
   ].join('\n'));
-})();
-//#endregion
+});
+
+impOptimize();
+// //#endregion

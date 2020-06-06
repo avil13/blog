@@ -5,16 +5,18 @@
   "license": "MIT",
   "scripts": {
     "start": "eleventy --serve --watch --dryrun --port=1234",
-    "dev": "eleventy --serve --watch --dryrun --port=1234",
+    "dev": "cross-env DEV=true eleventy --serve --watch --dryrun --port=1234",
     "dev:debug": "DEBUG=Eleventy* eleventy --serve --watch --dryrun --port=1234",
     "build": "npm run build:create && npm run build:optimize",
     "build:create": "eleventy",
+    "build:create:dev": "cross-env DEV=true eleventy",
     "build:optimize": "node post-build.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "clean-css": "^4.2.3",
+    "cross-env": "^7.0.2",
     "html-minifier": "^4.0.0",
     "imagemin": "^7.0.1",
     "imagemin-mozjpeg": "^8.0.0",
