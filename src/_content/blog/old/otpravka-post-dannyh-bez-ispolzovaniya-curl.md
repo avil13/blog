@@ -2,6 +2,7 @@
 layout: base
 tags: [post, old]
 title: Отправка POST данных без использования CURL
+date: 2015-06-25
 ---
 
 # Отправка POST данных без использования CURL

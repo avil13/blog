@@ -2,6 +2,7 @@
 layout: base
 tags: [post, old]
 title: Преобразование даты в Eloquent
+date: 2015-06-24
 ---
 
 # Преобразование даты в Eloquent

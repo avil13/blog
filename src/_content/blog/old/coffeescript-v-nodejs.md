@@ -2,6 +2,7 @@
 layout: base
 tags: [post, old]
 title: coffeescript в node.js
+date: 2015-10-02
 ---
 
 # coffeescript в node.js

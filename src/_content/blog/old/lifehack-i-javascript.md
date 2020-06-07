@@ -3,6 +3,7 @@ layout: base
 tags: [post, old]
 title: Лайфхак и JavaScript
 description: Способ немного упростить работу в браузере при помощи JavaScript
+date: 2015-09-29
 ---
 
 # Лайфхак и JavaScript

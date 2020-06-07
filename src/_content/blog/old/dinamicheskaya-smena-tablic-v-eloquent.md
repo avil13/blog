@@ -2,6 +2,7 @@
 layout: base
 tags: [post, old]
 title: Динамическая смена таблиц в Eloquent
+date: 2015-07-29
 ---
 
 # Динамическая смена таблиц в Eloquent

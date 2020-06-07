@@ -11,7 +11,10 @@ subtitle: Все статьи
 {%- for item in collections.post reversed %}
 {%- unless item.data.excludeSitemap == true %}
 
+{% if forloop.first != true %}
 <div class="is-divider"></div>
+{% endif %}
+
 <a href="{{ item.url }}" class="">{{ item.data.title }}</a>
 
 {%- endunless %}

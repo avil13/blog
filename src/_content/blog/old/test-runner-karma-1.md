@@ -3,6 +3,7 @@ layout: base
 tags: [post, old]
 title: Урок по работе с тест раннером Karma
 description: Основы работы с тестраннером Karma
+date: 2015-10-06
 ---
 
 # Урок по работе с тест раннером Karma

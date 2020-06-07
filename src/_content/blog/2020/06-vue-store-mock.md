@@ -1,8 +1,9 @@
 ---
 layout: base
-tags: [post, 2020]
+tags: [post, 2k20]
 title: Vuex + Jest.mock
 description: Jest.mock вместе с Vuex - пример тестирования
+date: 2020-06-30
 ---
 
 # Как я тестировал класс зависящий от vuex-store используя jest.mock
