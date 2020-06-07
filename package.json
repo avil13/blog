@@ -19,11 +19,11 @@
     "cross-env": "^7.0.2",
     "html-minifier": "^4.0.0",
     "imagemin": "^7.0.1",
-    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "purify-css": "^1.2.5",
     "terser": "^4.7.0",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   }
 }
