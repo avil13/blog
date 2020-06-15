@@ -71,7 +71,7 @@ class Status {
   // они нам не важны, поэтому простой пример, что бы был
 
   /**
-   * метод, который говорит, что хотябы один документ подписан
+   * метод, который говорит, что хотя бы один документ подписан
    */
   hasSignedDocument(): boolean {
     return this.data.some(doc => doc.isSigned);
@@ -90,7 +90,7 @@ const factory = (mockData) => {
   return new Status();
 }
 
-// Два теста вызвающих метод тестируемого клсса
+// Два теста вызывающих метод тестируемого класса
 it.each([
   // [methodName, expectResult, mockData]
   [ 'hasSignedDocument', false, [] ],
