@@ -11,6 +11,7 @@
       format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -61,17 +62,17 @@ h6 {
 .is-facebook {
   color: #fff;
   background-color: #3b5998;
-  border-color: rgba(0,0,0,.2);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 .is-twitter {
   color: #fff;
   background-color: #55acee;
-  border-color: rgba(0,0,0,.2);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 .is-vk {
   color: #fff;
   background-color: #587ea3;
-  border-color: rgba(0,0,0,.2);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .social-icon {
@@ -96,10 +97,9 @@ h6 {
   margin: 1rem auto;
 }
 
-
 @media screen and (max-device-width: 769px) {
   .hero-body {
     padding-left: 0;
     padding-right: 0;
   }
- }
+}

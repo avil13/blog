@@ -54,15 +54,17 @@
   <link rel="stylesheet" href="/assets/css/bulma.css">
   {% endif %}
 
+  <link rel="preload" as="stylesheet" href="/assets/css/style.css">
+  <link rel="preload" as="stylesheet" href="/assets/css/code.css">
+
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/code.css">
 
   <!-- app.js -->
   {% capture appJs %}
   {% include scripts/app.ts %}
   {% include scripts/lite-yt-embed.ts %}
   {% endcapture %}
-  <script>{{ appJs | ts | jsmin | safe }}</script>
+  <script>{ { appJs | ts | jsmin | safe } }</script>
   <!-- /app.js -->
 
   <!-- analitycs   -->
@@ -78,6 +80,7 @@
     {% include partials/footer.html %}
   </div>
 
+  <link rel="stylesheet" href="/assets/css/code.css" lazyload>
 </body>
 
 </html>
