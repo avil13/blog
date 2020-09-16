@@ -1,5 +1,5 @@
 /* FONT */
-@font-face {
+/* @font-face {
   font-family: 'JetBrains Mono';
   src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/eot/JetBrainsMono-Regular.eot')
       format('embedded-opentype'),
@@ -11,14 +11,16 @@
       format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
-}
+} */
 
 * {
+  text-rendering: optimizeLegibility;
+  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
+  font-display: swap;
   -webkit-font-feature-settings: 'liga' on, 'calt' on;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-family: 'JetBrains Mono';
 }
 /* end FONT */
 
