@@ -62,7 +62,7 @@
   {% include scripts/app.ts %}
   {% include scripts/lite-yt-embed.ts %}
   {% endcapture %}
-  <script>{ { appJs | ts | jsmin | safe } }</script>
+  <script>{{ appJs | ts | jsmin | safe }}</script>
   <!-- /app.js -->
 
   <!-- analitycs   -->
