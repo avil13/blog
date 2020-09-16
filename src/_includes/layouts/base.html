@@ -57,6 +57,9 @@
   <link rel="preload" as="style" href="/assets/css/style.css">
   <link rel="preload" as="style" href="/assets/css/code.css">
 
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/code.css" lazyload>
+
   <!-- app.js -->
   {% capture appJs %}
   {% include scripts/app.ts %}
@@ -71,15 +74,11 @@
 </head>
 
 <body>
-
   <div>
     {% include partials/header.html %}
     {% include partials/container.html %}
     {% include partials/footer.html %}
   </div>
-
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/code.css" lazyload>
 </body>
 
 </html>
