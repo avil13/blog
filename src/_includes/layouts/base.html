@@ -54,10 +54,8 @@
   <link rel="stylesheet" href="/assets/css/bulma.css">
   {% endif %}
 
-  <link rel="preload" as="stylesheet" href="/assets/css/style.css">
-  <link rel="preload" as="stylesheet" href="/assets/css/code.css">
-
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="preload" as="style" href="/assets/css/code.css">
 
   <!-- app.js -->
   {% capture appJs %}
@@ -80,6 +78,7 @@
     {% include partials/footer.html %}
   </div>
 
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/code.css" lazyload>
 </body>
 
