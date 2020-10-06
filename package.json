@@ -7,10 +7,11 @@
     "start": "eleventy --serve --watch --dryrun --port=1234",
     "dev": "cross-env DEV=true eleventy --serve --watch --dryrun --port=1234",
     "dev:debug": "DEBUG=Eleventy* eleventy --serve --watch --dryrun --port=1234",
-    "build": "npm run build:create && npm run build:optimize",
+    "build": "npm run yaspeller && npm run build:create && npm run build:optimize",
     "build:create": "eleventy",
     "build:create:dev": "cross-env DEV=true eleventy",
-    "build:optimize": "node post-build.js"
+    "build:optimize": "node post-build.js",
+    "yaspeller": "yaspeller ./src/"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
@@ -25,5 +26,8 @@
     "purify-css": "^1.2.5",
     "terser": "^4.7.0",
     "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "yaspeller": "^7.0.0"
   }
 }
