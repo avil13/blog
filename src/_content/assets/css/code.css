@@ -30,6 +30,10 @@ code[class*='language-']::selection {
   background: #b3d4fc;
 }
 
+p > code {
+  border-radius: 2px;
+}
+
 @media print {
   pre[class*='language-'],
   code[class*='language-'] {
@@ -222,7 +226,7 @@ pre[class*='language-'] > code[class*='language-'] {
 /*
   Мои допиливания
 */
-pre[class*='language-'] {
+pre[class*='language-'], blockquote {
   border-radius: 2px;
 }
 
@@ -230,7 +234,11 @@ mark {
   background-color: rgb(53, 59, 69);
   color: #d4d4d4;
   display: inline-block;
-  line-height: 1.3rem;
+  line-height: 1.4rem;
   width: 100%;
   min-width: 80vh;
+}
+
+mark:empty:before {
+  content: ' ';
 }
