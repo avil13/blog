@@ -28,6 +28,7 @@
     "typescript": "^3.9.5"
   },
   "devDependencies": {
+    "fast-glob": "^3.2.4",
     "yaspeller": "^7.0.0"
   }
 }

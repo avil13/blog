@@ -69,8 +69,8 @@
   <!-- /app.js -->
 
   <!-- analitycs   -->
-  <meta name="yandex-verification" content="f67a94644015ed15" />
-  <meta name="google-site-verification" content="LRKvCIJV6gFdYM5ZX45mZ5HEo-Sa7pI8sLIfL9tRU48" />
+  <meta name="yandex-verification" content="site.seo.yandexVerification" />
+  <meta name="google-site-verification" content="site.seo.googleVerification" />
 </head>
 
 <body>
@@ -79,6 +79,14 @@
     {% include partials/container.html %}
     {% include partials/footer.html %}
   </div>
+
+  <script>
+  window.addEventListener('load', () => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  });
+  </script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@ const CleanCSS = require('clean-css');
 const Terser = require('terser');
 const ts = require('typescript');
 const tsConfig = require('./tsconfig.json');
+const fg = require('fast-glob');
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -29,6 +30,23 @@ module.exports = function (eleventyConfig) {
       componentName,
       require(componentPath)
     );
+  });
+
+  eleventyConfig.addCollection('allFilesCollection', () => {
+    const images = fg.sync([
+      './src/_content/**/*.svg',
+      './src/_content/**/*.png',
+      './src/_content/**/*.jpg',
+      './src/_content/**/*.jpeg',
+    ], { dot: true });
+    const styles = fg.sync([
+      './src/_content/assets/css/*.css',
+    ], { dot: true });
+
+    return {
+      images: images.map(file => `/assets/images/${path.basename(file)}`),
+      styles: styles.map(file => `/assets/css/${path.basename(file)}`),
+    }
   });
 
   // CODE Highlite
@@ -72,7 +90,7 @@ module.exports = function (eleventyConfig) {
   // return Config
   return {
     pathPrefix: '/',
-    templateFormats: ['md', 'njk', 'html', 'liquid', 'css', 'json'],
+    templateFormats: ['md', 'njk', 'html', 'liquid', 'css', 'json', 'js'],
     markdownTemplateEngine: 'liquid',
     htmlTemplateEngine: 'liquid',
     dataTemplateEngine: 'liquid',
