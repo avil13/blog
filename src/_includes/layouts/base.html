@@ -68,6 +68,15 @@
   <script>{{ appJs | ts | jsmin | safe }}</script>
   <!-- /app.js -->
 
+  <script defer src="/assets/js/quicklink.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      if (quicklink) {
+        quicklink.listen({ timeout: 1000 });
+      }
+    });
+  </script>
+
   <!-- analitycs   -->
   <meta name="yandex-verification" content="site.seo.yandexVerification" />
   <meta name="google-site-verification" content="site.seo.googleVerification" />
@@ -81,11 +90,11 @@
   </div>
 
   <script>
-  window.addEventListener('load', () => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js');
-    }
-  });
+    window.addEventListener('load', () => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js');
+      }
+    });
   </script>
 </body>
 

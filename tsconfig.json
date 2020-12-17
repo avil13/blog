@@ -5,13 +5,13 @@
     "sourceMap": false,
     "target": "ES2015",
     "module": "ES2015",
-    "moduleResolution": "Classic",
+    "moduleResolution": "classic",
     "allowJs": false,
     "strict": false,
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "removeComments": false,
+    "removeComments": true,
     "lib": ["ESNext", "dom"],
     "types": []
   },
@@ -23,6 +23,7 @@
     "**/__mocks__/**/*",
     "**/__tests__/**/*",
     "**/build/**/*",
-    "**/build-es5/**/*"
+    "**/build-es5/**/*",
+    "**/service-worker.js"
   ]
 }
