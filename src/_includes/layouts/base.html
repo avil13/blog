@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, maximum-scale=3, initial-scale=1, shrink-to-fit=no" />
+
   <meta name="description"
     content="{% if description %}{{ description }} {% else %} {{ site.description }} {% endif %}" />
   <meta name="robots" content="index, follow" />
@@ -22,12 +23,16 @@
   <meta property="og:image"
     content="{% if featured_image  %}{{ featured_image }}{% else %}{{ site.social_meta.featured_image }}{% endif %}" />
   {% endif %}
+
+  <!-- Twitter -->
   <meta name="twitter:card"
     content="{% if description %}{{ description }}{% else %}{{ site.social_meta.description }}{% endif %}" />
-  {% if site.social_meta.twitter %}
+  <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.social_meta.description }}{% endif %}">
   <meta name="twitter:site" content="{{ site.social_meta.twitter }}" />
   <meta name="twitter:creator" content="{{ site.social_meta.twitter }}" />
-  {% endif %}
+  <meta property="twitter:image" content="{{ site.social_meta.featured_image }}">
 
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
