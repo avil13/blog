@@ -90,7 +90,7 @@ module.exports = function (eleventyConfig) {
   // return Config
   return {
     pathPrefix: '/',
-    templateFormats: ['md', 'njk', 'html', 'liquid', 'css', 'json', 'js'],
+    templateFormats: ['md', 'njk', 'html', 'liquid', 'css', 'json', 'js', 'txt'],
     markdownTemplateEngine: 'liquid',
     htmlTemplateEngine: 'liquid',
     dataTemplateEngine: 'liquid',
