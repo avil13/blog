@@ -43,7 +43,7 @@ const imageminOptipng = require('imagemin-optipng');
 const impOptimize = (async () => {
   const files = await imagemin(
     [
-      'src/_content/assets/images/**/*.{jpg,jpeg,png,JPG,JPEG,PNG,svg}'
+      'src/_content/assets/images/**/*.{jpg,jpeg,png,JPG,JPEG,PNG,svg,webp}'
     ], {
       destination: '_site/assets/images',
       plugins: [

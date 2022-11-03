@@ -38,7 +38,9 @@ module.exports = function (eleventyConfig) {
       './src/_content/**/*.png',
       './src/_content/**/*.jpg',
       './src/_content/**/*.jpeg',
+      './src/_content/**/*.webp',
     ], { dot: true });
+
     const styles = fg.sync([
       './src/_content/assets/css/*.css',
     ], { dot: true });

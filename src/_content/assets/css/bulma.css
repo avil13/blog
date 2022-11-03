@@ -29,7 +29,7 @@
 
 .select:not(.is-multiple):not(.is-loading)::after, .navbar-link:not(.is-arrowless)::after {
   border: 3px solid transparent;
-  border-radius: 2px;
+  border-radius: 4px;
   border-right: 0;
   border-top: 0;
   content: " ";
@@ -2817,7 +2817,7 @@ fieldset[disabled] .button.is-danger.is-inverted.is-outlined {
 }
 
 .button.is-small {
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 0.75rem;
 }
 
@@ -2896,7 +2896,7 @@ fieldset[disabled] .button {
 }
 
 .buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large) {
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 0.75rem;
 }
 
@@ -4481,7 +4481,7 @@ fieldset[disabled] .select select:-ms-input-placeholder,
 }
 
 .is-small.input, .is-small.textarea {
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 0.75rem;
 }
 
@@ -4781,7 +4781,7 @@ fieldset[disabled] .select select:hover {
 }
 
 .select.is-small {
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 0.75rem;
 }
 
@@ -6076,7 +6076,7 @@ a.list-item {
 }
 
 .menu-list a {
-  border-radius: 2px;
+  border-radius: 4px;
   color: #4a4a4a;
   display: block;
   padding: 0.5em 0.75em;
