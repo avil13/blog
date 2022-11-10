@@ -30,7 +30,6 @@
   margin-right: auto;
   border-radius: 4px;
   max-width: 100%;
-  box-shadow: 0px 1px 6px -2px rgba(0, 0, 0, 0.49);
 }
 
 /* bulma */
@@ -60,6 +59,23 @@ h5,
 h6 {
   text-shadow: 0 0 1px #fff, 0 0px 0px #fff;
 }
+
+.list-of-parts {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.list-of-parts > a {
+  margin-left: 1rem;
+}
+
+.list-of-parts a.active {
+  color: #444;
+}
+
 /* social */
 .is-facebook {
   color: #fff;
