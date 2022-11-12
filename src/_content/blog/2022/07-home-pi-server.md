@@ -2,8 +2,9 @@
 layout: base
 tags: [post, 2k22, server, orange pi]
 title: 🍊 Настройка домашнего Transmission сервера на Orange PI
-description: Настройка домашнего Transmission сервера на Orange PI
+description: Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов
 date: 2022-10-16
+featured_image: /assets/images/avil13-graph-bg-orange.jpg
 ---
 
 # Настройка домашнего Transmission сервера на Orange PI

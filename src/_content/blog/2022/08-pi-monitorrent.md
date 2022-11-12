@@ -4,6 +4,7 @@ tags: [post, 2k22, server, orange pi]
 title: 🍊 Настройка Monitorrent на Orange PI
 description: автоматическое скачивание сериалов
 date: 2022-11-08
+featured_image: /assets/images/avil13-graph-bg-orange.jpg
 ---
 
 # Настройка Monitorrent на Orange PI

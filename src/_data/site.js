@@ -8,6 +8,6 @@ module.exports = {
   },
   social_meta: {
     description: 'блог о разработке и программировании',
-    featured_image: '/_site/assets/images/logo-avil.png'
+    featured_image: '/assets/images/avil13-graph-bg.jpg'
   },
 };

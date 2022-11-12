@@ -21,7 +21,7 @@
     content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
   {% if site.social_meta.featured_image or featured_image %}
   <meta property="og:image"
-    content="{% if featured_image  %}{{ featured_image }}{% else %}{{ site.social_meta.featured_image }}{% endif %}" />
+    content="{% if featured_image  %}{{ site.url }}{{ featured_image }}{% else %}{{ site.url }}{{ site.social_meta.featured_image }}{% endif %}" />
   {% endif %}
 
   <!-- Twitter -->
@@ -30,9 +30,9 @@
   <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
   <meta property="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.social_meta.description }}{% endif %}">
-  <meta name="twitter:site" content="{{ site.social_meta.twitter }}" />
-  <meta name="twitter:creator" content="{{ site.social_meta.twitter }}" />
-  <meta property="twitter:image" content="{{ site.social_meta.featured_image }}">
+  <meta name="twitter:site" property="twitter:site" content="{{ site.social_meta.twitter }}" />
+  <meta name="twitter:creator" property="twitter:creator" content="{{ site.social_meta.twitter }}" />
+  <meta name="twitter:image" property="twitter:image" content="{% if featured_image  %}{{ site.url }}{{ featured_image }}{% else %}{{ site.url }}{{ site.social_meta.featured_image }}{% endif %}">
 
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
