@@ -1,6 +1,6 @@
 // Incrementing VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const VERSION = 3;
+const VERSION = 4;
 const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = '/offline.html';
@@ -22,8 +22,8 @@ self.addEventListener('install', (event) => {
       const fileCachePromises = [
         dataForCache.pages,
         dataForCache.styles,
-        dataForCache.images,
-        dataForCache.otherFiles,
+        // dataForCache.images,
+        // dataForCache.otherFiles,
       ]
         .filter(item => item && Array.isArray(item))
         .map(files => cache.addAll(files));
