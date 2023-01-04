@@ -21,7 +21,7 @@ self.addEventListener('install', (event) => {
 
       const fileCachePromises = [
         dataForCache.pages,
-        // dataForCache.styles,
+        dataForCache.styles,
         // dataForCache.images,
         // dataForCache.otherFiles,
       ]
