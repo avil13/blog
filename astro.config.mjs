@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-// import { remarkImagePlugin } from "./xxx/remark-image-plugin.mjs";
+import { cacheSwAstroPlugin } from "./xxx/cache-sw-astro-plugin.ts";
 
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
@@ -17,6 +17,7 @@ export default defineConfig({
       },
     }),
     sitemap(),
+    cacheSwAstroPlugin(),
   ],
   markdown: {
     syntaxHighlight: "prism",
