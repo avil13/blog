@@ -1,0 +1,11 @@
+{
+  "workbench.colorTheme": "Night Owl",
+  "cSpell.words": [
+    "astro",
+    "astrojs",
+    "tailwindcss"
+  ],
+  "files.exclude": {
+    "node_modules": true
+  }
+}
