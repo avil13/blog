@@ -1,0 +1,56 @@
+---
+import "../styles/style.css";
+import "../styles/prism-nord.css";
+
+import BaseNav from "./partial/BaseNav.astro";
+import FavIcon from "../components/FavIcon.astro";
+import HeadBlock, { SeoProps } from "../components/head/HeadBlock.astro";
+import FooterBlock from "./partial/FooterBlock.astro";
+import HeroImage from "../components/image/HeroImage.astro";
+import MetrikBlock from "./partial/MetrikBlock.astro";
+
+export interface Props {
+  seo: SeoProps;
+  hero?: {
+    img: string;
+    alt: string;
+    srcset?: string;
+  };
+}
+
+export type LayoutProps = Props;
+
+let { seo, frontmatter, hero } = Astro.props;
+
+seo = seo || frontmatter.seo || {};
+
+const isProd = import.meta.env.MODE === "production" || null;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <HeadBlock {...seo} />
+    <FavIcon />
+    {isProd && <MetrikBlock />}
+  </head>
+
+  <body class="bg-white dark:bg-gray-800 dark:text-gray-200">
+    <BaseNav />
+
+    <HeroImage {...hero} />
+
+    <main
+      class="container max-w-4xl px-2 py-4 mx-auto prose md:px-0 lg:prose-xl dark:prose-invert"
+    >
+      <article>
+        <slot />
+      </article>
+    </main>
+
+    <FooterBlock />
+  </body>
+</html>

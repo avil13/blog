@@ -1,0 +1,21 @@
+---
+import { getPosts } from '../utils/posts';
+
+let allPosts = await Astro.glob("../pages/blog/**/*.{md,mdx}");
+
+allPosts = getPosts(allPosts);
+---
+
+<h2>Статьи:</h2>
+
+<ul class="px-8 list-none text-md not-prose">
+  {
+    allPosts.map((post) => {
+      return (
+        <li class="w-full py-2 border-b border-gray-200 dark:border-gray-700 last:border-none">
+          <a href={post.url}>{post.title}</a>
+        </li>
+      );
+    })
+  }
+</ul>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://avil13.com/sitemap-index.xml

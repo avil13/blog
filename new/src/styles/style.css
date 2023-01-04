@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*  */
+a {
+  @apply text-blue-300;
+}
+
+a:hover {
+  @apply underline;
+}
+
+a:visited {
+  @apply text-blue-400;
+}
+
+a:active {
+  @apply text-blue-600;
+}
+
+.menu-list {
+  @apply hidden;
+  @apply md:relative md:flex md:visible md:flex-col;
+  @apply flex-row items-center align-middle;
+}
+
+.menu-btn.show + .menu-list {
+  @apply flex;
+  @apply bg-gray-700 border absolute right-0 top-10 rounded space-y-4;
+}
+
+/* .list-of-parts { */
+.list-of-parts {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.list-of-parts > a {
+  margin-left: 1rem;
+}
+
+.list-of-parts a.active {
+  color: #888;
+}
+
+/* Hero */
+.hero-image {
+  width: 100%;
+  max-width: 100rem;
+  max-height: 30rem;
+  object-fit: cover;
+  margin-inline: auto;
+}

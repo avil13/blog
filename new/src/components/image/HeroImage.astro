@@ -1,0 +1,18 @@
+---
+const { alt = "", src = "", srcset = "" } = Astro.props;
+---
+
+{
+  src ? (
+    <img
+      src={src}
+      alt={alt}
+      srcset={srcset}
+      class="hero-image"
+      fetchpriority="high"
+      height="480"
+      sizes="100vw"
+      width="1600"
+    />
+  ) : null
+}

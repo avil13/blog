@@ -1,0 +1,29 @@
+---
+import { getFooterPosts } from "../../../utils/posts";
+
+const allPosts = await Astro.glob("../../../pages/blog/**/*.{md,mdx}");
+
+const posts = getFooterPosts(allPosts, Astro.url.pathname);
+---
+
+<div class="flex flex-col w-full space-y-4 md:space-y-0 md:flex-row" aria-label="Footer page navigation">
+  {
+    posts.prev && (
+      <a class="flex w-1/2" href={posts.prev.url} title={posts.prev.title}>
+        <span aria-hidden="true">&laquo;</span>
+        <span class="truncate">{posts.prev.title}</span>
+      </a>
+    )
+  }
+  <slot>
+    {posts.prev && posts.next && <span class="hidden px-8 text-gray-200 dark:text-gray-700 md:block">|</span>}
+  </slot>
+  {
+    posts.next && (
+      <a class="flex justify-end w-1/2" href={posts.next.url} title={posts.next.title}>
+        <span class="truncate">{posts.next.title}</span>
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    )
+  }
+</div>

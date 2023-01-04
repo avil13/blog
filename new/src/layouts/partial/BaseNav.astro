@@ -1,0 +1,107 @@
+<div class="sticky top-0 px-4 bg-white dark:bg-gray-800 dark:text-gray-200">
+  <header class="container flex justify-between py-4 mx-auto md:max-w-4xl">
+    <a href="/" class="text-gray-400 hover:no-underline visited:text-gray-400">AVIL13.com</a>
+
+    <div class="flex items-center">
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Theme switcher"
+        class="p-0.5 text-sm text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700"
+      >
+        <svg
+          class="hidden w-5 h-5 dark:block"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path>
+        </svg>
+        <svg
+          class="w-5 h-5 dark:hidden"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      {
+        /*
+      <nav class="relative">
+        <button
+          type="button"
+          class="md:hidden menu-btn"
+          role="menu"
+          aria-label="Navigation menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <ul class="ml-4 menu-list">
+          <li
+            class="flex flex-col p-4 space-y-4 md:space-y-0 md:flex-row md:p-0 md:space-x-8"
+          >
+            <a href="#about">About</a>
+            <a href="#contact">Contacts</a>
+          </li>
+        </ul>
+
+      </nav>
+      */
+      }
+    </div>
+    <script>
+      (async () => {
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.toggle("dark", true);
+        } else {
+          document.documentElement.classList.toggle("dark", false);
+        }
+
+        document
+          .getElementById("theme-toggle")
+          ?.addEventListener("click", () => {
+            const isDark = document.documentElement.classList.contains("dark");
+
+            document.documentElement.classList.toggle("dark", !isDark);
+
+            localStorage.setItem("theme", isDark ? "" : "dark");
+          });
+      })();
+    </script>
+
+    <script>
+      (() => {
+        const btn = document.querySelector(".menu-btn");
+        if (btn) {
+          btn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            btn.classList.toggle("show");
+          });
+        }
+      })();
+    </script>
+  </header>
+</div>

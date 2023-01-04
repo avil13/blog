@@ -1,0 +1,9 @@
+cat /sys/devices/virtual/thermal/thermal_zone1/temp
+
+
+function get_temp {
+    local TEMPER="$(cat /sys/devices/virtual/thermal/thermal_zone1/temp)"
+    echo "${TEMPER:0:2}°C"
+}
+get_temp
+

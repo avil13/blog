@@ -1,0 +1,48 @@
+<div>
+  <a href={Astro.url} id="share-page" class="hidden">
+    <svg
+      class="w-6 h-6"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"
+      ></path>
+    </svg>
+  </a>
+
+  <script>
+    (async () => {
+      if (!navigator.share) {
+        return;
+      }
+
+      const title = document.querySelector("title")?.innerText || "";
+      const text =
+        document
+          .querySelector('meta[name="description"]')
+          ?.getAttribute("content") || "";
+      const url =
+        document.querySelector('link[rel="canonical"]')?.getAttribute("href") ||
+        location.href;
+
+      const shareLink = document.getElementById("share-page");
+
+      shareLink?.classList.toggle("hidden", false);
+
+      shareLink?.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        navigator
+          .share({
+            title,
+            text,
+            url,
+          })
+          .then(() => console.log("Successful share"))
+          .catch((error) => console.log("Error sharing", error));
+      });
+    })();
+  </script>
+</div>
