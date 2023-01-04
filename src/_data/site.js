@@ -11,3 +11,4 @@ module.exports = {
     featured_image: '/assets/images/avil13-graph-bg.jpg'
   },
 };
+/assets/images/avil13-graph-bg.jpg
