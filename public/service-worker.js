@@ -1,6 +1,6 @@
 // Incrementing VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const VERSION = 6;
+const VERSION = 7;
 const CACHE_NAME = "offline_store";
 // Customize this with a different URL if needed.
 const OFFLINE_URL = "/offline.html";
@@ -67,11 +67,11 @@ self.addEventListener("fetch", (event) => {
         return cachedResponse;
       }
 
-      // Else, use the preloaded response, if it's there
-      const response = await event.preloadResponse;
-      if (response) {
-        return response;
-      }
+      // // Else, use the preloaded response, if it's there
+      // const response = await event.preloadResponse;
+      // if (response) {
+      //   return response;
+      // }
 
       // Else try the network.
       return fetch(event.request).then((response) => {
