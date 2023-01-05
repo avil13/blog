@@ -1,15 +1,19 @@
 // Incrementing VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const VERSION = 4;
-const CACHE_NAME = 'offline';
+const VERSION = 5;
+const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
-const OFFLINE_URL = '/offline.html';
+const OFFLINE_URL = "/offline.html";
 
-const ALL_PAGES_FILE = '/offline-cached-list.json';
+const ALL_PAGES_FILE = "/offline-cached-list.json";
 
-self.addEventListener('install', (event) => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
+      if (await caches.has(CACHE_NAME)) {
+        await caches.delete(CACHE_NAME);
+      }
+
       const cache = await caches.open(CACHE_NAME);
       // Setting {cache: 'reload'} in the new request will ensure that the
       // response isn't fulfilled from the HTTP cache; i.e., it will be from
@@ -25,23 +29,22 @@ self.addEventListener('install', (event) => {
         // dataForCache.images,
         // dataForCache.otherFiles,
       ]
-        .filter(item => item && Array.isArray(item))
-        .map(files => cache.addAll(files));
+        .filter((item) => item && Array.isArray(item))
+        .map((files) => cache.addAll(files));
 
       await Promise.all(fileCachePromises);
-
     })()
   );
   // Force the waiting service worker to become the active service worker.
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
       // Enable navigation preload if it's supported.
       // See https://developers.google.com/web/updates/2017/02/navigation-preload
-      if ('navigationPreload' in self.registration) {
+      if ("navigationPreload" in self.registration) {
         await self.registration.navigationPreload.enable();
       }
     })()
@@ -51,13 +54,14 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener("fetch", (event) => {
   // We only want to call event.respondWith() if this is a navigation request
   // for an HTML page.
   event.respondWith(
     (async () => {
-      // Respond from the cache if we can
       const cache = await caches.open(CACHE_NAME);
+
+      // Respond from the cache if we can
       const cachedResponse = await cache.match(event.request);
       if (cachedResponse) {
         return cachedResponse;
@@ -70,7 +74,10 @@ self.addEventListener('fetch', (event) => {
       }
 
       // Else try the network.
-      return fetch(event.request);
+      return fetch(event.request).then((response) => {
+        cache.put(response.clone());
+        return response;
+      });
     })()
-  )
+  );
 });
