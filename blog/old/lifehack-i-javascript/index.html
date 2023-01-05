@@ -76,7 +76,7 @@
   </div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/06-vue-store-mock.da23efa7.css" /><script type="module">(()=>{const e=document.querySelector(".menu-btn");e&&e.addEventListener("click",t=>{t.preventDefault(),t.stopPropagation(),e.classList.toggle("show")})})();(async()=>(localStorage.theme==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.toggle("dark",!0):document.documentElement.classList.toggle("dark",!1),document.getElementById("theme-toggle")?.addEventListener("click",()=>{const e=document.documentElement.classList.contains("dark");document.documentElement.classList.toggle("dark",!e),localStorage.setItem("theme",e?"":"dark")})))();(async()=>{if(!navigator.share)return;const e=document.querySelector("title")?.innerText||"",t=document.querySelector('meta[name="description"]')?.getAttribute("content")||"",c=document.querySelector('link[rel="canonical"]')?.getAttribute("href")||location.href,n=document.getElementById("share-page");n?.classList.toggle("hidden",!1),n?.addEventListener("click",o=>{o.preventDefault(),o.stopPropagation(),navigator.share({title:e,text:t,url:c}).then(()=>console.log("Successful share")).catch(a=>console.log("Error sharing",a))})})();
+  <link rel="stylesheet" href="/assets/06-vue-store-mock.6e533d7c.css" /><script type="module">(()=>{const e=document.querySelector(".menu-btn");e&&e.addEventListener("click",t=>{t.preventDefault(),t.stopPropagation(),e.classList.toggle("show")})})();(async()=>(localStorage.theme==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.toggle("dark",!0):document.documentElement.classList.toggle("dark",!1),document.getElementById("theme-toggle")?.addEventListener("click",()=>{const e=document.documentElement.classList.contains("dark");document.documentElement.classList.toggle("dark",!e),localStorage.setItem("theme",e?"":"dark")})))();(async()=>{if(!navigator.share)return;const e=document.querySelector("title")?.innerText||"",t=document.querySelector('meta[name="description"]')?.getAttribute("content")||"",c=document.querySelector('link[rel="canonical"]')?.getAttribute("href")||location.href,n=document.getElementById("share-page");n?.classList.toggle("hidden",!1),n?.addEventListener("click",o=>{o.preventDefault(),o.stopPropagation(),navigator.share({title:e,text:t,url:c}).then(()=>console.log("Successful share")).catch(a=>console.log("Error sharing",a))})})();
 </script></head>
 
   <body class="bg-white dark:bg-gray-800 dark:text-gray-200">
@@ -165,24 +165,25 @@
     </main>
 
     <footer class="container max-w-4xl py-8 mx-auto mt-16 mb-8 border-t border-b border-gray-200 dark:border-gray-700 md:px-0">
-  <div class="flex px-6">
+  <div class="flex px-6 md:space-x-24">
     <div class="flex flex-col w-full space-y-4 md:space-y-0 md:flex-row" aria-label="Footer page navigation">
-  <a class="flex w-1/2" href="/blog/old/dinamicheskaya-smena-tablic-v-eloquent" title="Динамическая смена таблиц в Eloquent">
+  <a class="flex w-10/12 sm:w-1/2" href="/blog/old/dinamicheskaya-smena-tablic-v-eloquent" title="Динамическая смена таблиц в Eloquent">
         <span aria-hidden="true">&laquo;</span>
         <span class="truncate">Динамическая смена таблиц в Eloquent</span>
       </a>
-  <div>
+  
+  <a class="flex justify-end w-10/12 sm:w-1/2" href="/blog/old/coffeescript-v-nodejs" title="coffeescript в node.js">
+        <span class="truncate">coffeescript в node.js</span>
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+</div>
+    <div>
   <a href="https://avil13.com/blog/old/lifehack-i-javascript/" id="share-page" class="hidden">
     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
     </svg>
   </a>
 
   
-</div>
-  <a class="flex justify-end w-1/2" href="/blog/old/coffeescript-v-nodejs" title="coffeescript в node.js">
-        <span class="truncate">coffeescript в node.js</span>
-        <span aria-hidden="true">&raquo;</span>
-      </a>
 </div>
   </div>
 </footer>
