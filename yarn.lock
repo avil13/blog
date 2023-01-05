@@ -723,7 +723,7 @@ ast-types@0.14.2:
   dependencies:
     tslib "^2.0.1"
 
-astro@^1.8.0:
+astro@^1.9.0:
   version "1.9.0"
   resolved "https://registry.npmjs.org/astro/-/astro-1.9.0.tgz#e1a10357c1832ae5b6175a53e401259baf0bbd3a"
   integrity sha512-wHHMOHgqBGV4L8ThjCeBuVHq0mGF1F515jRyp5ns0MzFcu2nFk1frlXBKZEfmMMM84cilq3HeimrRTLkIGxI8A==
