@@ -1,7 +1,7 @@
 // Incrementing VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const VERSION = 5;
-const CACHE_NAME = "offline";
+const VERSION = 6;
+const CACHE_NAME = "offline_store";
 // Customize this with a different URL if needed.
 const OFFLINE_URL = "/offline.html";
 
@@ -75,7 +75,7 @@ self.addEventListener("fetch", (event) => {
 
       // Else try the network.
       return fetch(event.request).then((response) => {
-        cache.put(response.clone());
+        cache.put(event.request, response.clone());
         return response;
       });
     })()
