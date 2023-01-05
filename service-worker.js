@@ -1,6 +1,6 @@
 // Incrementing VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const VERSION = 6;
+const VERSION = 7;
 const CACHE_NAME = "offline_store";
 // Customize this with a different URL if needed.
 const OFFLINE_URL = "/offline.html";
