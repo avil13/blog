@@ -1,6 +1,6 @@
 // Incrementing VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const VERSION = 7;
+const VERSION = 8;
 const CACHE_NAME = "offline_store";
 // Customize this with a different URL if needed.
 const OFFLINE_URL = "/offline.html";
@@ -13,6 +13,8 @@ self.addEventListener("install", (event) => {
       if (await caches.has(CACHE_NAME)) {
         await caches.delete(CACHE_NAME);
       }
+
+      return;
 
       const cache = await caches.open(CACHE_NAME);
       // Setting {cache: 'reload'} in the new request will ensure that the
@@ -29,7 +31,7 @@ self.addEventListener("install", (event) => {
         // dataForCache.images,
         // dataForCache.otherFiles,
       ]
-        .filter((item) => item && Array.isArray(item))
+        .filter((item) => item && Array.isArray(item) && item.length)
         .map((files) => cache.addAll(files));
 
       await Promise.all(fileCachePromises);
@@ -67,11 +69,11 @@ self.addEventListener("fetch", (event) => {
         return cachedResponse;
       }
 
-      // // Else, use the preloaded response, if it's there
-      // const response = await event.preloadResponse;
-      // if (response) {
-      //   return response;
-      // }
+      // Else, use the preloaded response, if it's there
+      const response = await event.preloadResponse;
+      if (response) {
+        return response;
+      }
 
       // Else try the network.
       return fetch(event.request).then((response) => {
