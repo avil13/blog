@@ -12,9 +12,16 @@ const formatPost = (post: any) => {
     return null;
   }
 
+  const date = new Date(post.frontmatter?.seo?.date);
+
+  const y =date.getFullYear();
+  const m = `${date.getMonth() + 1}`.padStart(2, '0');
+  const d = `${date.getUTCDate()}`.padStart(2, '0');
+
   return {
     ...post,
     title: getTitle(post),
+    date: `${y}.${m}.${d}`,
   };
 };
 

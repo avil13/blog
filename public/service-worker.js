@@ -1,6 +1,6 @@
 // Incrementing VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const VERSION = 8;
+const VERSION = 9;
 const CACHE_NAME = "offline_store";
 // Customize this with a different URL if needed.
 const OFFLINE_URL = "/offline.html";
@@ -14,8 +14,6 @@ self.addEventListener("install", (event) => {
         await caches.delete(CACHE_NAME);
       }
 
-      return;
-
       const cache = await caches.open(CACHE_NAME);
       // Setting {cache: 'reload'} in the new request will ensure that the
       // response isn't fulfilled from the HTTP cache; i.e., it will be from
@@ -26,7 +24,7 @@ self.addEventListener("install", (event) => {
       const dataForCache = await response.json();
 
       const fileCachePromises = [
-        dataForCache.pages,
+        // dataForCache.pages,
         dataForCache.styles,
         // dataForCache.images,
         // dataForCache.otherFiles,

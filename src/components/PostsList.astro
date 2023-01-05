@@ -1,5 +1,5 @@
 ---
-import { getPosts } from '../utils/posts';
+import { getPosts } from "../utils/posts";
 
 let allPosts = await Astro.glob("../pages/blog/**/*.{md,mdx}");
 
@@ -13,7 +13,10 @@ allPosts = getPosts(allPosts);
     allPosts.map((post) => {
       return (
         <li class="w-full py-2 border-b border-gray-200 dark:border-gray-700 last:border-none">
-          <a href={post.url}>{post.title}</a>
+          <a href={post.url} class="block">
+            {post.title}
+            </a>
+            <span class="text-gray-400 dark:text-gray-600 text-xs">{post.date}</span>
         </li>
       );
     })
