@@ -67,11 +67,11 @@ self.addEventListener("fetch", (event) => {
         return cachedResponse;
       }
 
-      // Else, use the preloaded response, if it's there
-      const response = await event.preloadResponse;
-      if (response) {
-        return response;
-      }
+      // // Else, use the preloaded response, if it's there
+      // const response = await event.preloadResponse;
+      // if (response) {
+      //   return response;
+      // }
 
       // Else try the network.
       return fetch(event.request).then((response) => {
