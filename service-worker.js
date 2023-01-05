@@ -75,7 +75,7 @@ self.addEventListener("fetch", (event) => {
 
       // Else try the network.
       return fetch(event.request).then((response) => {
-        cache.put(response.clone());
+        cache.put(event.request, response.clone());
         return response;
       });
     })()
