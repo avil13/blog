@@ -68,13 +68,13 @@
       clickmap: true,
       trackLinks: true,
       accurateTrackBounce: true,
+      trackHash: true,
     });
   })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 </script>
 <noscript><div>
     <img src="https://mc.yandex.ru/watch/91122403" style="position:absolute; left:-9999px;" alt="">
-  </div>
-</noscript>
+  </div></noscript>
 <!-- /Yandex.Metrika counter -->
   <link rel="stylesheet" href="/assets/06-vue-store-mock.716ea008.css" /><script type="module">(()=>{const e=document.querySelector(".menu-btn");e&&e.addEventListener("click",t=>{t.preventDefault(),t.stopPropagation(),e.classList.toggle("show")})})();(async()=>(localStorage.theme==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.toggle("dark",!0):document.documentElement.classList.toggle("dark",!1),document.getElementById("theme-toggle")?.addEventListener("click",()=>{const e=document.documentElement.classList.contains("dark");document.documentElement.classList.toggle("dark",!e),localStorage.setItem("theme",e?"":"dark")})))();(async()=>{if(!navigator.share)return;const e=document.querySelector("title")?.innerText||"",t=document.querySelector('meta[name="description"]')?.getAttribute("content")||"",c=document.querySelector('link[rel="canonical"]')?.getAttribute("href")||location.href,n=document.getElementById("share-page");n?.classList.toggle("hidden",!1),n?.addEventListener("click",o=>{o.preventDefault(),o.stopPropagation(),navigator.share({title:e,text:t,url:c}).then(()=>console.log("Successful share")).catch(a=>console.log("Error sharing",a))})})();
 </script></head>
@@ -220,6 +220,8 @@
 </div>
   </div>
 </footer>
+    
+
 
     <script>
         (async () => {
