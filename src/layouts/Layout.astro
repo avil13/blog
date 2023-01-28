@@ -8,6 +8,7 @@ import HeadBlock, { SeoProps } from "../components/head/HeadBlock.astro";
 import FooterBlock from "./partial/FooterBlock.astro";
 import HeroImage from "../components/image/HeroImage.astro";
 import MetrikBlock from "./partial/MetrikBlock.astro";
+import SchemaBlog from "./partial/SchemaBlog.astro";
 
 export interface Props {
   seo: SeoProps;
@@ -52,6 +53,7 @@ const isProd = import.meta.env.MODE === "production" || null;
     </main>
 
     <FooterBlock />
+    <SchemaBlog seo={seo} />
 
     {
       isProd &&

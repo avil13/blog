@@ -1,0 +1,37 @@
+---
+import type { SeoProps } from "../../components/head/HeadBlock.astro";
+
+export interface Props {
+  seo: SeoProps;
+}
+
+const { seo } = Astro.props;
+
+const isPost = seo.title && seo.image && seo.date;
+let schema = '';
+
+if (isPost && seo.image) {
+  const imgUrl = new URL(Astro.url);
+  imgUrl.pathname = seo.image;
+
+  schema = JSON.stringify({
+    "@context": "https://schema.org/",
+    "@type": "BlogPosting",
+    author: {
+      "@type": "Person",
+      name: "AVIL13",
+    },
+    headline: seo.title,
+    image: imgUrl.toString(),
+    datePublished: seo.date,
+    publisher: {
+      "@type": "Person",
+      name: "AVIL13",
+      jobTitle: "web-developer",
+      url: Astro.url.origin,
+    },
+  }, null, 1);
+}
+---
+
+{isPost && <script set:html={schema} type="application/ld+json"></script> }
