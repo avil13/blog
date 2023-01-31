@@ -24,6 +24,7 @@ export type LayoutProps = Props;
 let { seo, frontmatter, hero } = Astro.props;
 
 seo = seo || frontmatter.seo || {};
+hero = hero || frontmatter.hero || {};
 
 const isProd = import.meta.env.MODE === "production" || null;
 ---

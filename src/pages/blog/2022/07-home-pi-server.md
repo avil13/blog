@@ -4,8 +4,11 @@ seo:
   title: 🍊 Настройка домашнего Transmission сервера на Orange PI
   description: Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов
   date: 2022-10-16
-  image: /images/graph/avil13-graph-bg-orange.jpg
+  image: /images/graph/blog/orange-1.webp
   featured_image: /images/blog/home-pi/avil13-graph-bg-orange.jpg
+hero:
+  src: /images/graph/blog/orange-1.webp
+  alt: Настройка домашнего Transmission сервера на Orange PI
 ---
 
 # Настройка домашнего Transmission сервера на Orange PI
@@ -14,6 +17,8 @@ seo:
   <a href="/blog/2022/07-home-pi-server/" class="active">Часть 1</a>
   <a href="/blog/2022/08-pi-monitorrent/">Часть 2</a>
 </div>
+
+::TOC::
 
 В данной статье опишу то как я настраивал домашний сервер, который настроен загрузки торрентов через `transmission`.
 

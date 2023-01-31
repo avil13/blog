@@ -5,6 +5,9 @@ seo:
   description: Настройка автоматического скачивания сериалов на Orange PI. Настройка Docker для автоматизации скачивания.
   date: 2022-11-08
   image: /images/graph/avil13-graph-bg-orange.jpg
+hero:
+  src: /images/graph/blog/orange-2.webp
+  alt: Настройка Monitorrent на Orange PI
 ---
 
 # Настройка Monitorrent на Orange PI

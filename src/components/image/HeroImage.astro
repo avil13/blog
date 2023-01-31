@@ -1,9 +1,12 @@
 ---
-const { alt = "", src = "", srcset = "" } = Astro.props;
----
+let { alt = "", src = "", srcset = "" } = Astro.props;
 
+const isShow = src ? true : null;
+
+src = Astro.url.origin + src;
+---
 {
-  src ? (
+  isShow && (
     <img
       src={src}
       alt={alt}
@@ -14,5 +17,5 @@ const { alt = "", src = "", srcset = "" } = Astro.props;
       sizes="100vw"
       width="1600"
     />
-  ) : null
+  )
 }

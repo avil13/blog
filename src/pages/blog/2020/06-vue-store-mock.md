@@ -4,6 +4,10 @@ seo:
   title: Vuex + Jest.mock
   description: Jest.mock вместе с Vuex - пример тестирования
   date: 2020-06-30
+  image: /images/graph/blog/jest.webp
+hero:
+  src: /images/graph/blog/jest.webp
+  alt: Vuex + Jest.mock
 ---
 
 # Как я тестировал класс зависящий от vuex-store используя jest.mock
