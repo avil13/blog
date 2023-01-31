@@ -4,6 +4,11 @@ seo:
   title: coffeescript в node.js
   description: Запуск скриптов на coffeescript из ноды
   date: 2015-10-02
+  image: /images/graph/blog/node-coffee.webp
+hero:
+  src: /images/graph/blog/node-coffee.webp
+  alt: coffeescript в node.js
+
 ---
 
 # coffeescript в node.js

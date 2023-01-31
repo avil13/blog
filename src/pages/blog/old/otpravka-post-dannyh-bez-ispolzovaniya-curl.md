@@ -1,9 +1,14 @@
 ---
 layout: '../../../layouts/Layout.astro'
 seo:
-  title: Отправка POST данных без использования CURL
+  title: Отправка POST данных через PHP без использования CURL
   description: Нативный PHP, старый трюк с созданием реквеста
   date: 2015-06-25
+  image: /images/graph/blog/post-php.webp
+hero:
+  src: /images/graph/blog/post-php.webp
+  alt: Отправка в PHP POST данных без использования CURL
+
 ---
 
 # Отправка POST данных без использования CURL

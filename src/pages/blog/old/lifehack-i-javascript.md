@@ -5,6 +5,10 @@ seo:
   title: Лайфхак и JavaScript
   description: Способ немного упростить работу в браузере при помощи JavaScript
   date: 2015-09-29
+  image: /images/graph/blog/js-live-hack.webp
+hero:
+  src: /images/graph/blog/js-live-hack.webp
+  alt: Лайфхакер и JavaScript
 ---
 
 # Лайфхак и JavaScript
