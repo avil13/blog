@@ -4,6 +4,10 @@ seo:
   title: Преобразование даты в Eloquent
   description: Работа с ORM Eloquent и датами
   date: 2015-06-24
+  image: /images/graph/blog/eloquent-1.webp
+hero:
+  src: /images/graph/blog/eloquent-1.webp
+  alt: Преобразование даты в Eloquent
 ---
 
 # Преобразование даты в Eloquent

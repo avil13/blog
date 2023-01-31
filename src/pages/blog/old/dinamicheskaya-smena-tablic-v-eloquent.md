@@ -5,6 +5,10 @@ seo:
   title: Динамическая смена таблиц в Eloquent
   description: Работа с ORM Eloquent
   date: 2015-07-29
+  image: /images/graph/blog/eloquent-2.webp
+hero:
+  src: /images/graph/blog/eloquent-2.webp
+  alt: Динамическая смена таблиц в Eloquent
 ---
 
 # Динамическая смена таблиц в Eloquent

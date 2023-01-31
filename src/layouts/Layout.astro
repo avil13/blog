@@ -13,7 +13,7 @@ import SchemaBlog from "./partial/SchemaBlog.astro";
 export interface Props {
   seo: SeoProps;
   hero?: {
-    img: string;
+    src: string;
     alt: string;
     srcset?: string;
   };
@@ -27,6 +27,13 @@ seo = seo || frontmatter.seo || {};
 hero = hero || frontmatter.hero || {};
 
 const isProd = import.meta.env.MODE === "production" || null;
+
+const dateTime: string | null = seo.date ? new Intl.DateTimeFormat('ru-RU', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}).format(new Date(seo.date)) : null;
+
 ---
 
 <!DOCTYPE html>
@@ -49,6 +56,7 @@ const isProd = import.meta.env.MODE === "production" || null;
       class="container max-w-4xl px-2 py-4 mx-auto prose md:px-0 lg:prose-xl dark:prose-invert"
     >
       <article>
+        {dateTime && <time set:html={dateTime} datetime={dateTime} class="text-gray-400 dark:text-gray-600 text-xs" />}
         <slot />
       </article>
     </main>

@@ -16,7 +16,7 @@ allPosts = getPosts(allPosts);
           <a href={post.url} class="block">
             {post.title}
             </a>
-            <span class="text-gray-400 dark:text-gray-600 text-xs">{post.date}</span>
+            <time datetime={post.date} class="text-gray-400 dark:text-gray-600 text-xs">{post.date}</time>
         </li>
       );
     })
