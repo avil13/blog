@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /*  */
+* {
+  @apply font-light;
+}
+
 a {
   @apply text-blue-300;
 }
