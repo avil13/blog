@@ -31,6 +31,8 @@ jobs:
         run: |
           npm ci
           npm run build
+          # Serve Astro's _astro directory without Jekyll processing.
+          touch dist/.nojekyll
 
       # Deploy to GitHub Pages
       - name: Deploy 🚀
