@@ -19,8 +19,8 @@ export const cacheSwAstroPlugin = (conf: Partial<typeof currentConfig> = {}): As
       'astro:build:done': async (options) => {
         const pages: string[] = [];
 
-        options.routes.forEach(route => {
-          pages.push(route.route);
+        options.pages.forEach((page) => {
+          pages.push(page.pathname);
         });
 
         const resultData = {

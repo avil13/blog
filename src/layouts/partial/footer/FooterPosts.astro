@@ -1,9 +1,9 @@
 ---
 import { getFooterPosts } from "../../../utils/posts";
 
-const allPosts = await Astro.glob("../../../pages/blog/**/*.{md,mdx}");
+const postModules = import.meta.glob("../../../pages/blog/**/*.{md,mdx}", { eager: true });
 
-const posts = getFooterPosts(allPosts, Astro.url.pathname);
+const posts = getFooterPosts(Object.values(postModules), Astro.url.pathname);
 ---
 
 <div class="flex flex-col w-full space-y-4 md:space-y-0 md:flex-row" aria-label="Footer page navigation">

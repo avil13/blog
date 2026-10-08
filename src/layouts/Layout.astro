@@ -4,14 +4,19 @@ import "../styles/prism-nord.css";
 
 import BaseNav from "./partial/BaseNav.astro";
 import FavIcon from "../components/FavIcon.astro";
-import HeadBlock, { SeoProps } from "../components/head/HeadBlock.astro";
+import HeadBlock from "../components/head/HeadBlock.astro";
+import type { SeoProps } from "../components/head/HeadBlock.astro";
 import FooterBlock from "./partial/FooterBlock.astro";
 import HeroImage from "../components/image/HeroImage.astro";
 import MetrikBlock from "./partial/MetrikBlock.astro";
 import SchemaBlog from "./partial/SchemaBlog.astro";
 
 export interface Props {
-  seo: SeoProps;
+  seo?: SeoProps;
+  frontmatter?: {
+    seo?: SeoProps;
+    hero?: Props["hero"];
+  };
   hero?: {
     src: string;
     alt: string;
@@ -21,10 +26,13 @@ export interface Props {
 
 export type LayoutProps = Props;
 
-let { seo, frontmatter, hero } = Astro.props;
+const { seo: seoProp, frontmatter = {}, hero: heroProp } = Astro.props;
 
-seo = seo || frontmatter.seo || {};
-hero = hero || frontmatter.hero || {};
+const seo = seoProp ?? frontmatter.seo ?? {
+  title: "AVIL13",
+  description: "блог о разработке и программировании",
+};
+const hero = heroProp ?? frontmatter.hero ?? {};
 
 const isProd = import.meta.env.MODE === "production" || null;
 

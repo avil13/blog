@@ -1,9 +1,9 @@
 ---
 import { getPosts } from "../utils/posts";
 
-let allPosts = await Astro.glob("../pages/blog/**/*.{md,mdx}");
+const postModules = import.meta.glob("../pages/blog/**/*.{md,mdx}", { eager: true });
 
-allPosts = getPosts(allPosts);
+const allPosts = getPosts(Object.values(postModules));
 ---
 
 <h2>Статьи:</h2>
