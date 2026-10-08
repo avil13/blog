@@ -104,10 +104,10 @@ javascript:!function(e){e.save=function(o,n){if(!o)return void e.error("Console.
 
 В итоге эти мини закладки выглядят вот так на панели
 
-![](/images/blog/img/links1.png)
+![](../../../assets/images/blog/img/links1.png)
 
 И вот так я их создавал в диспетчере закладок
 
-![](/images/blog/img/links2.png)
+![](../../../assets/images/blog/img/links2.png)
 
 Все иконки, это символы шрифтов и добавить себе их можно просто скопировав.

@@ -119,11 +119,11 @@ systemctl restart sshd
 ```bash
 armbian-config
 ```
-![armbian-config](/images/blog/home-pi/01-home-pi.webp)
+![armbian-config](../../../assets/images/blog/home-pi/01-home-pi.webp)
 
 В окне, выбираем `Software`, `Softy` и для начала ставим галочки возле `transmission` и `docker`.
 
-![armbian-config-softy](/images/blog/home-pi/02-home-pi.webp)
+![armbian-config-softy](../../../assets/images/blog/home-pi/02-home-pi.webp)
 
 Ещё почему то не установился `docker-compose`, поэтому ставим его руками:
 
@@ -240,7 +240,7 @@ sudo docker-compose up -d
 
 Если все прошло успешно, поздравляю. Теперь вы можете в браузере набрать `http://pi.loc` (Об этом адресе я писал выше, это алиас на IP мини-компа).
 
-![heimdall](/images/blog/home-pi/03-home-pi.webp)
+![heimdall](../../../assets/images/blog/home-pi/03-home-pi.webp)
 
 ## Добавление ссылок на приложения
 
@@ -248,15 +248,15 @@ sudo docker-compose up -d
 
 Кликаем на `Application type` и в выпадающем списке ищем `Transmission`
 
-![heimdall-transmission](/images/blog/home-pi/04-home-pi.webp)
+![heimdall-transmission](../../../assets/images/blog/home-pi/04-home-pi.webp)
 
 В настройках обязательно проставьте `url` у меня я задал `http://pi.loc:9091/transmission/web/`
 
-![heimdall-transmission-dashboard](/images/blog/home-pi/05-home-pi.webp)
+![heimdall-transmission-dashboard](../../../assets/images/blog/home-pi/05-home-pi.webp)
 
 Теперь при клике по иконке, мы будем переходить по указанному в настройках адресу.
 
-![transmission-web-page](/images/blog/home-pi/06-home-pi.webp)
+![transmission-web-page](../../../assets/images/blog/home-pi/06-home-pi.webp)
 
 Настройка завершена.
 

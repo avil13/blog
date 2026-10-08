@@ -1,18 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import type { LayoutProps } from "../layouts/Layout.astro";
-import PostsList from "../components/PostsList.astro";
+import Layout from '../layouts/Layout.astro';
+import type { LayoutProps } from '../layouts/Layout.astro';
+import PostsList from '../components/PostsList.astro';
 
-import type { SeoProps } from "../components/seo/SEO.astro";
+import type { SeoProps } from '../components/seo/SEO.astro';
 
 const seo: SeoProps = {
-  title: "AVIL13",
-  description: "блог о разработке и программировании",
+  title: 'AVIL13',
+  description: 'блог о разработке и программировании',
 };
 
 const hero: LayoutProps['hero'] = {
   src: '/images/graph/blog/ciber-ninja.webp',
-  alt: 'hero image',
+  alt: 'main hero image',
 };
 ---
 
@@ -23,10 +23,7 @@ const hero: LayoutProps['hero'] = {
 
   <p>Как обычно здесь нет ничего определённо полезного, но без неё ни как.</p>
 
-  <p>
-    То ради чего создавался этот сайт, находится внутри, но то, насколько это
-    важно, зависит только от Тебя…
-  </p>
+  <p>То ради чего создавался этот сайт, находится внутри, но то, насколько это важно, зависит только от Тебя…</p>
 
   <hr />
 

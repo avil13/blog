@@ -116,27 +116,27 @@ docker-compose up -d
 
 Как помните у меня алиас на мой сервер записан как `pi.loc` поэтому проходим по адресу `http://pi.loc:6687/login` и авторизуемся.
 
-![pi-monitorrent login](/images/blog/pi-monitorrent/01-pi-monitorrent.webp)
+![pi-monitorrent login](../../../assets/images/blog/pi-monitorrent/01-pi-monitorrent.webp)
 
 По умолчанию пароль `monitorrent` при желании его можно поменять в настройках.
 
-![pi-monitorrent pass](/images/blog/pi-monitorrent/02-pi-monitorrent.webp)
+![pi-monitorrent pass](../../../assets/images/blog/pi-monitorrent/02-pi-monitorrent.webp)
 
 Далее идём в настройки
 
-![pi-monitorrent settings](/images/blog/pi-monitorrent/03-pi-monitorrent.webp)
+![pi-monitorrent settings](../../../assets/images/blog/pi-monitorrent/03-pi-monitorrent.webp)
 
 Подключаем клиент `transmission` что бы прокидывать в него новые торренты.
 
-![pi-monitorrent transmission](/images/blog/pi-monitorrent/04-pi-monitorrent.webp)
+![pi-monitorrent transmission](../../../assets/images/blog/pi-monitorrent/04-pi-monitorrent.webp)
 
 Так как они работают в докере, то хост это имя контейнера.
 
-![pi-monitorrent transmission settings](/images/blog/pi-monitorrent/05-pi-monitorrent.webp)
+![pi-monitorrent transmission settings](../../../assets/images/blog/pi-monitorrent/05-pi-monitorrent.webp)
 
 При желании можно добавить уведомления в удобном для вас мессенджере, и получать информацию о появлении новой серии в настроенной ссылке для слежения.
 
-![pi-monitorrent notification](/images/blog/pi-monitorrent/06-pi-monitorrent.webp)
+![pi-monitorrent notification](../../../assets/images/blog/pi-monitorrent/06-pi-monitorrent.webp)
 
 И все это было сделано, потому что `monitorrent` умеет следить за данными ему по ссылкам торрентами.
 И автоматом их обновлять, и сообщать об этом тебе, мой дорогой пользователь.
