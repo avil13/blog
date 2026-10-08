@@ -1,21 +1,33 @@
----
-title: Oops! Offline
-permalink: offline.html
-excludeSitemap: true
----
 <!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-</head>
-
-<body>
-  <h1>{{ title }}</h1>
-  <p>This is where you should tell the user how to find their content. Maybe on the <a href="{{ "/" | url }}">home
-      page?</a></p>
-</body>
-
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1f2937" />
+    <title>Нет подключения | AVIL13</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #1f2937;
+        color: #e5e7eb;
+      }
+      main {
+        max-width: 36rem;
+        padding: 2rem;
+        text-align: center;
+      }
+      a { color: #93c5fd; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Нет подключения</h1>
+      <p>Страница недоступна офлайн. Проверьте интернет и попробуйте ещё раз.</p>
+      <p><a href="/">На главную</a></p>
+    </main>
+  </body>
 </html>

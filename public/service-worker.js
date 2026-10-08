@@ -1,83 +1,106 @@
-// Incrementing VERSION will kick off the install event and force
-// previously cached resources to be updated from the network.
-const VERSION = 11;
-const CACHE_NAME = "offline_store";
-// Customize this with a different URL if needed.
+const VERSION = "2026-10-08-1";
+const CACHE_NAME = `avil13-${VERSION}`;
 const OFFLINE_URL = "/offline.html";
-
-const ALL_PAGES_FILE = "/offline-cached-list.json";
+const PRECACHE_URLS = [
+  OFFLINE_URL,
+  "/",
+  "/manifest.json",
+  "/favicon.svg",
+  "/images/app-icon/android-icon-192x192.png",
+  "/images/app-icon/icon-512x512.png",
+  "/images/app-icon/maskable-icon-512x512.png",
+];
+const GENERATED_CACHE_LIST = "/offline-cached-list.json";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
-      if (await caches.has(CACHE_NAME)) {
-        await caches.delete(CACHE_NAME);
-      }
-
       const cache = await caches.open(CACHE_NAME);
-      // Setting {cache: 'reload'} in the new request will ensure that the
-      // response isn't fulfilled from the HTTP cache; i.e., it will be from
-      // the network.
-      // await cache.add(new Request(OFFLINE_URL, { cache: 'reload' }));
+      await cache.addAll(PRECACHE_URLS.map((url) => new Request(url, { cache: "reload" })));
 
-      const response = await fetch(ALL_PAGES_FILE);
-      const dataForCache = await response.json();
-
-      const fileCachePromises = [
-        // dataForCache.pages,
-        dataForCache.styles,
-        // dataForCache.images,
-        // dataForCache.otherFiles,
-      ]
-        .filter((item) => item && Array.isArray(item) && item.length)
-        .map((files) => cache.addAll(files));
-
-      await Promise.all(fileCachePromises);
+      try {
+        const response = await fetch(new Request(GENERATED_CACHE_LIST, { cache: "reload" }));
+        if (response.ok) {
+          const { pages = [], styles = [], images = [], otherFiles = [] } = await response.json();
+          const urls = [...pages, ...styles, ...images, ...otherFiles].filter(Boolean);
+          await cache.addAll(urls);
+        }
+      } catch (error) {
+        console.warn("Generated cache list is unavailable", error);
+      }
     })()
   );
-  // Force the waiting service worker to become the active service worker.
+
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
-      // Enable navigation preload if it's supported.
-      // See https://developers.google.com/web/updates/2017/02/navigation-preload
+      const cacheNames = await caches.keys();
+      await Promise.all(
+        cacheNames
+          .filter((cacheName) => cacheName.startsWith("avil13-") && cacheName !== CACHE_NAME)
+          .map((cacheName) => caches.delete(cacheName))
+      );
+
       if ("navigationPreload" in self.registration) {
         await self.registration.navigationPreload.enable();
       }
     })()
   );
 
-  // Tell the active service worker to take control of the page immediately.
   self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
-  // We only want to call event.respondWith() if this is a navigation request
-  // for an HTML page.
-  event.respondWith(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
+  const { request } = event;
+  const url = new URL(request.url);
 
-      // Respond from the cache if we can
-      const cachedResponse = await cache.match(event.request);
-      if (cachedResponse) {
-        return cachedResponse;
-      }
+  if (request.method !== "GET" || url.origin !== self.location.origin) {
+    return;
+  }
 
-      // Else, use the preloaded response, if it's there
-      const response = await event.preloadResponse;
-      if (response) {
-        return response;
-      }
+  if (request.mode === "navigate") {
+    event.respondWith(handleNavigationRequest(event));
+    return;
+  }
 
-      // Else try the network.
-      return fetch(event.request).then((response) => {
-        cache.put(event.request, response.clone());
-        return response;
-      });
-    })()
-  );
+  event.respondWith(handleAssetRequest(request));
 });
+
+async function handleNavigationRequest(event) {
+  const cache = await caches.open(CACHE_NAME);
+
+  try {
+    const preloadResponse = await event.preloadResponse;
+    const networkResponse = preloadResponse || await fetch(event.request);
+
+    if (networkResponse.ok) {
+      await cache.put(event.request, networkResponse.clone());
+    }
+
+    return networkResponse;
+  } catch {
+    return await cache.match(event.request)
+      || await cache.match(new URL(event.request.url).pathname)
+      || await cache.match(OFFLINE_URL);
+  }
+}
+
+async function handleAssetRequest(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cachedResponse = await cache.match(request);
+
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
+  const networkResponse = await fetch(request);
+
+  if (networkResponse.ok) {
+    await cache.put(request, networkResponse.clone());
+  }
+
+  return networkResponse;
+}
