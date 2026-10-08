@@ -1,5 +1,4 @@
 ---
-layout: '../../../layouts/Layout.astro'
 seo:
   title: Преобразование даты в Eloquent
   description: Работа с ORM Eloquent и датами

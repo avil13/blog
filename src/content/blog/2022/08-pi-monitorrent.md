@@ -1,5 +1,4 @@
 ---
-layout: '../../../layouts/Layout.astro'
 seo:
   title: 🍊 Настройка Monitorrent на Orange PI
   description: Настройка автоматического скачивания сериалов на Orange PI. Настройка Docker для автоматизации скачивания.

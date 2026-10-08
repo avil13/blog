@@ -1,49 +1,55 @@
+import type { CollectionEntry } from "astro:content";
 
-const trimSlashes = (url: string) => {
-  return url.replace(/\/$/, '').replace(/^\//, '');
-}
-
-const getTitle = (post: any): string => {
-  return post.frontmatter?.seo?.title || post.seo?.title || post.title;
+type BlogPost = CollectionEntry<"blog">;
+type FormattedPost = BlogPost & {
+  title: string;
+  date: string;
+  url: string;
 };
 
-const formatPost = (post: any) => {
+type FooterPosts = {
+  prev: FormattedPost | null;
+  current: FormattedPost | null;
+  next: FormattedPost | null;
+};
+
+const trimSlashes = (url: string) => {
+  return url.replace(/\/$/, "").replace(/^\//, "");
+};
+
+const getPostUrl = (post: BlogPost): string => {
+  return `/blog/${post.id}/`;
+};
+
+const formatDate = (date: Date): string => {
+  const y = date.getFullYear();
+  const m = `${date.getMonth() + 1}`.padStart(2, "0");
+  const d = `${date.getUTCDate()}`.padStart(2, "0");
+
+  return `${y}.${m}.${d}`;
+};
+
+const formatPost = (post: BlogPost | undefined): FormattedPost | null => {
   if (!post) {
     return null;
   }
 
-  const date = new Date(post.frontmatter?.seo?.date);
-
-  const y =date.getFullYear();
-  const m = `${date.getMonth() + 1}`.padStart(2, '0');
-  const d = `${date.getUTCDate()}`.padStart(2, '0');
-
   return {
     ...post,
-    title: getTitle(post),
-    date: `${y}.${m}.${d}`,
+    title: post.data.seo.title,
+    date: formatDate(post.data.seo.date),
+    url: getPostUrl(post),
   };
 };
 
-export const getPosts = (allPosts: any[]) => {
+export const getPosts = (allPosts: BlogPost[]): FormattedPost[] => {
   return allPosts
     .map(formatPost)
-    .sort((a: any, b: any) => {
-      if (!b.frontmatter?.seo?.date) {
-        return 0;
-      }
-      return a.frontmatter?.seo?.date > b.frontmatter?.seo?.date ? -1 : 1;
-    });
+    .filter((post): post is FormattedPost => Boolean(post))
+    .sort((a, b) => b.data.seo.date.getTime() - a.data.seo.date.getTime());
 };
 
-
-type FooterPosts = {
-  prev: any | null;
-  current: any | null;
-  next: any | null;
-}
-
-export const getFooterPosts = (allPosts: any[], currentUrl: string): FooterPosts => {
+export const getFooterPosts = (allPosts: BlogPost[], currentUrl: string): FooterPosts => {
   const res: FooterPosts = {
     prev: null,
     current: null,
@@ -54,11 +60,11 @@ export const getFooterPosts = (allPosts: any[], currentUrl: string): FooterPosts
 
   posts.forEach((post, i) => {
     if (trimSlashes(post.url) === trimSlashes(currentUrl)) {
-      res.current = formatPost(post);
-      res.prev = formatPost(posts[i + 1]);
-      res.next = formatPost(posts[i - 1]);
+      res.current = post;
+      res.prev = posts[i + 1] ?? null;
+      res.next = posts[i - 1] ?? null;
     }
-  })
+  });
 
   return res;
 };

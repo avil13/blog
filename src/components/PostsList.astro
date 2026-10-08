@@ -1,9 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import { getPosts } from "../utils/posts";
 
-const postModules = import.meta.glob("../pages/blog/**/*.{md,mdx}", { eager: true });
-
-const allPosts = getPosts(Object.values(postModules));
+const allPosts = getPosts(await getCollection("blog"));
 ---
 
 <h2>Статьи:</h2>

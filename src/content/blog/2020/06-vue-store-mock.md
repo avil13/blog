@@ -1,5 +1,4 @@
 ---
-layout: '../../../layouts/Layout.astro'
 seo:
   title: Vuex + Jest.mock
   description: Jest.mock вместе с Vuex - пример тестирования

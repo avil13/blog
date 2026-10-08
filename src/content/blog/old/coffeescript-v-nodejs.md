@@ -1,5 +1,4 @@
 ---
-layout: '../../../layouts/Layout.astro'
 seo:
   title: coffeescript в node.js
   description: Запуск скриптов на coffeescript из ноды

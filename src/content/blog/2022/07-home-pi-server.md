@@ -1,5 +1,4 @@
 ---
-layout: '../../../layouts/Layout.astro'
 seo:
   title: 🍊 Настройка домашнего Transmission сервера на Orange PI
   description: Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов

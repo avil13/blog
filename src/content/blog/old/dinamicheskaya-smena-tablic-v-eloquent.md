@@ -1,5 +1,4 @@
 ---
-layout: '../../../layouts/Layout.astro'
 seo:
   tags: [post, old]
   title: Динамическая смена таблиц в Eloquent

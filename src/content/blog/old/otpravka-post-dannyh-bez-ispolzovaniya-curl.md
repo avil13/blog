@@ -1,5 +1,4 @@
 ---
-layout: '../../../layouts/Layout.astro'
 seo:
   title: Отправка POST данных через PHP без использования CURL
   description: Нативный PHP, старый трюк с созданием реквеста
