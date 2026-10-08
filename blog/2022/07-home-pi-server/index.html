@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <title>🍊 Настройка домашнего Transmission сервера на Orange PI | AVIL13.com</title>
-<meta name="description" content="Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов">
-<link rel="canonical" href="https://avil13.com/blog/2022/07-home-pi-server/">
-
-
-<meta property="og:url" content="https://avil13.com/blog/2022/07-home-pi-server/">
-<meta property="og:type" content="article">
-<meta property="og:title" content="🍊 Настройка домашнего Transmission сервера на Orange PI">
-<meta property="og:description" content="Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов">
-<meta property="og:image" content="https://avil13.com/images/graph/blog/orange-1.webp">
-
-
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="https://avil13.com">
-<meta property="twitter:url" content="https://avil13.com/blog/2022/07-home-pi-server/">
-<meta name="twitter:title" content="🍊 Настройка домашнего Transmission сервера на Orange PI">
-<meta name="twitter:description" content="Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов">
-<meta name="twitter:image" content="https://avil13.com/images/graph/blog/orange-1.webp">
-
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/app-icon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/images/app-icon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/images/app-icon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/images/app-icon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/images/app-icon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/images/app-icon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/app-icon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/images/app-icon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/app-icon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/images/app-icon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/app-icon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/app-icon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/app-icon/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileImage" content="/images/app-icon/ms-icon-144x144.png">
-
-
-    <script async defer src="https://an.avil.cc/tracker.js" data-website-id="cm5pcqww20001g714fa59bc4k"></script>
-
-<!-- Yandex.Metrika counter --><script type="text/javascript">
+<!DOCTYPE html><html lang="en" class="dark scroll-smooth"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width"><title>🍊 Настройка домашнего Transmission сервера на Orange PI | AVIL13.com</title><meta name="description" content="Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов"><link rel="canonical" href="https://avil13.com/blog/2022/07-home-pi-server/"><meta property="og:url" content="https://avil13.com/blog/2022/07-home-pi-server/"><meta property="og:type" content="article"><meta property="og:title" content="🍊 Настройка домашнего Transmission сервера на Orange PI"><meta property="og:description" content="Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов"><meta property="og:image" content="https://avil13.com/images/graph/blog/orange-1.webp"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:domain" content="https://avil13.com"><meta property="twitter:url" content="https://avil13.com/blog/2022/07-home-pi-server/"><meta name="twitter:title" content="🍊 Настройка домашнего Transmission сервера на Orange PI"><meta name="twitter:description" content="Как имея Orange PI легко настроить домашний сервер для скачивания доступных торрентов"><meta name="twitter:image" content="https://avil13.com/images/graph/blog/orange-1.webp"><link rel="apple-touch-icon" sizes="57x57" href="/images/app-icon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/app-icon/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/app-icon/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/app-icon/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/app-icon/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/app-icon/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/app-icon/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/app-icon/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/app-icon/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/app-icon/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/app-icon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/app-icon/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/app-icon/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><meta name="msapplication-TileImage" content="/images/app-icon/ms-icon-144x144.png"><link rel="stylesheet" href="/_astro/06-vue-store-mock.D_5DFEAh.css"><script async defer src="https://an.avil.cc/tracker.js" data-website-id="cm5pcqww20001g714fa59bc4k"></script><!-- Yandex.Metrika counter --><script type="text/javascript">
   (function async(m, e, t, r, i, k, a) {
     m[i] =
       m[i] ||
@@ -69,40 +25,7 @@
       trackHash: true,
     });
   })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-</script>
-<noscript><div>
-    <img src="https://mc.yandex.ru/watch/91122403" style="position:absolute; left:-9999px;" alt="">
-  </div></noscript>
-<!-- /Yandex.Metrika counter -->
-  <link rel="stylesheet" href="/assets/06-vue-store-mock.a7867599.css" /><script type="module">(()=>{const e=document.querySelector(".menu-btn");e&&e.addEventListener("click",t=>{t.preventDefault(),t.stopPropagation(),e.classList.toggle("show")})})();(async()=>(localStorage.theme==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.toggle("dark",!0):document.documentElement.classList.toggle("dark",!1),document.getElementById("theme-toggle")?.addEventListener("click",()=>{const e=document.documentElement.classList.contains("dark");document.documentElement.classList.toggle("dark",!e),localStorage.setItem("theme",e?"":"dark")})))();(async()=>{if(!navigator.share)return;const e=document.querySelector("title")?.innerText||"",t=document.querySelector('meta[name="description"]')?.getAttribute("content")||"",c=document.querySelector('link[rel="canonical"]')?.getAttribute("href")||location.href,n=document.getElementById("share-page");n?.classList.toggle("hidden",!1),n?.addEventListener("click",o=>{o.preventDefault(),o.stopPropagation(),navigator.share({title:e,text:t,url:c}).then(()=>console.log("Successful share")).catch(a=>console.log("Error sharing",a))})})();
-</script></head>
-
-  <body class="bg-white dark:bg-gray-800 dark:text-gray-200">
-    <div class="sticky top-0 px-4 bg-white dark:bg-gray-800 dark:text-gray-200 opacity-95">
-  <header class="container flex justify-between py-4 mx-auto md:max-w-4xl">
-    <a href="/" class="text-gray-400 hover:no-underline visited:text-gray-400">AVIL13.com</a>
-
-    <div class="flex items-center">
-      <button id="theme-toggle" type="button" aria-label="Theme switcher" class="p-0.5 text-sm text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700">
-        <svg class="hidden w-5 h-5 dark:block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-        </svg>
-        <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-        </svg>
-      </button>
-      
-    </div>
-    
-
-    
-  </header>
-</div>
-
-    <img src="https://avil13.com/images/graph/blog/orange-1.webp" alt="Настройка домашнего Transmission сервера на Orange PI" srcset="" class="hero-image" fetchpriority="high" height="480" sizes="100vw" width="1600">
-
-    <main class="container max-w-4xl px-2 py-4 mx-auto prose md:px-0 lg:prose-xl dark:prose-invert">
-      <article>
-        <time datetime="16.10.2022" class="text-gray-400 dark:text-gray-600 text-xs">16.10.2022</time>
-        <h1 id="настройка-домашнего-transmission-сервера-на-orange-pi">Настройка домашнего Transmission сервера на Orange PI</h1>
+</script><noscript><div><img src="https://mc.yandex.ru/watch/91122403" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter --></head><body class="bg-white dark:bg-gray-800 dark:text-gray-200"><div class="sticky top-0 px-4 bg-white dark:bg-gray-800 dark:text-gray-200 opacity-95"><header class="container flex justify-between py-4 mx-auto md:max-w-4xl"><a href="/" class="text-gray-400 hover:no-underline visited:text-gray-400">AVIL13.com</a><div class="flex items-center"><button id="theme-toggle" type="button" aria-label="Theme switcher" class="p-0.5 text-sm text-gray-500 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700"><svg class="hidden w-5 h-5 dark:block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button></div><script type="module">(async()=>{localStorage.theme===`dark`||!(`theme`in localStorage)&&window.matchMedia(`(prefers-color-scheme: dark)`).matches?document.documentElement.classList.toggle(`dark`,!0):document.documentElement.classList.toggle(`dark`,!1),document.getElementById(`theme-toggle`)?.addEventListener(`click`,()=>{let e=document.documentElement.classList.contains(`dark`);document.documentElement.classList.toggle(`dark`,!e),localStorage.setItem(`theme`,e?``:`dark`)})})();</script><script type="module">(()=>{let e=document.querySelector(`.menu-btn`);e&&e.addEventListener(`click`,t=>{t.preventDefault(),t.stopPropagation(),e.classList.toggle(`show`)})})();</script></header></div><img src="https://avil13.com/images/graph/blog/orange-1.webp" alt="Настройка домашнего Transmission сервера на Orange PI" srcset class="hero-image" fetchpriority="high" height="480" sizes="100vw" width="1600"><main class="container max-w-4xl px-2 py-4 mx-auto prose md:px-0 lg:prose-xl dark:prose-invert"><article><time datetime="16.10.2022" class="text-gray-400 dark:text-gray-600 text-xs">16.10.2022</time><h1 id="настройка-домашнего-transmission-сервера-на-orange-pi">Настройка домашнего Transmission сервера на Orange PI</h1>
 <div class="list-of-parts">
   <a href="/blog/2022/07-home-pi-server/" class="active">Часть 1</a>
   <a href="/blog/2022/08-pi-monitorrent/">Часть 2</a>
@@ -118,14 +41,14 @@
 <p>Что бы не запоминать адрес IP компьютера, я в файле <code>/etc/hosts</code> прописываю алиас на него, что бы далее было проще подключаться.
 У меня это <code>pi.loc</code>, если вы этого не сделали, то в описании ниже вместо <code>pi.loc</code> - подставляйте IP который нашли шагом ранее.
 В windows путь до этого файла такой <code>C:\Windows\System32\drivers\etc\hosts</code>.</p>
-<pre class="language-plaintext"><code is:raw="" class="language-plaintext"># ip            # host
+<pre class="language-plaintext" data-language="plaintext"><code class="language-plaintext"># ip            # host
 192.168.1.177   pi.loc</code></pre>
 <p>Теперь заходим на мини комп по <code>ssh</code>.</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">ssh</span> root@pi.loc</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> root@pi.loc</code></pre>
 <p>Если Вас спросят пароль, то это будет <code>1234</code> и сразу же его предложат поменять на что то более надёжное. Не пренебрегайте этим предложением.</p>
 <p>И так же предложат создать нового пользователя. Я выбрал имя <code>pi</code>.</p>
 <p>После авторизации обновляем установленные пакеты.</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">apt</span> update
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> update
 <span class="token function">apt</span> upgrade</code></pre>
 <p>После этого, возможно попросят перезагрузить компьютер. Для этого нужно ввести команду <code>reboot</code> и после снова войти по <code>ssh</code>.</p>
 <h2 id="запрет-входа-для-root">Запрет входа для root</h2>
@@ -133,35 +56,35 @@
 <p>Что бы запретить руту авторизоваться открываем на редактирование конфиг <code>/etc/ssh/sshd_config</code> и находим строку <code>PermitRootLogin</code> и ставим ей значение <code>no</code>.</p>
 <p>Ещё выставим <code>PubkeyAuthentication yes</code>. Что бы можно было входить по ключу.</p>
 <p>Затем перезагружаем ssh-демон командой:</p>
-<pre class="language-bash"><code is:raw="" class="language-bash">systemctl restart sshd</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">systemctl restart sshd</code></pre>
 <p>Теперь вы сможете авторизоваться только под обычным пользователем, которого система предложила вам создать на старте. У меня это <code>pi</code>, поэтому у меня вход будет через такую команду:</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">ssh</span> pi@pi.loc</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> pi@pi.loc</code></pre>
 <h2 id="вход-по-ssh-ключу-вместо-пароля">Вход по ssh ключу вместо пароля</h2>
 <p>Ещё, хорошей практикой, можно назвать авторизацию по ключу вместо ввода пароля.</p>
 <p>Копируем публичный ключ из вашей домашней директории, на компе, не на Pi.
 Он находится по пути <code>~/.ssh</code> и заканчивается на расширение <code>.pub</code>, например <code>id_rsa.pub</code>.</p>
 <p>Теперь авторизовавшить по <code>ssh</code> под пользователем <code>pi</code>, создаём файл с хранилищем ключей для авторизации по адресу <code>~/.ssh/authorized_keys</code></p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">mkdir</span> ~/.ssh <span class="token comment"># создаём папку если ее не было до тоо</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ~/.ssh <span class="token comment"># создаём папку если ее не было до тоо</span>
 <span class="token builtin class-name">cd</span> ~/.ssh    <span class="token comment"># заходим</span>
 <span class="token comment"># создаём файл где будут храниться публичные ключи</span>
 <span class="token comment"># записываем в него ранее скопированный публичный ключ</span>
 <span class="token function">vim</span> authorized_keys</code></pre>
 <p>Теперь можно будет входить по ssh не вводя пароль.</p>
 <p>Если для безопасности вам надо отключить вход по паролю, то в файле <code>/etc/ssh/sshd_config</code> пишем или исправляем такую строку.</p>
-<pre class="language-plaintext"><code is:raw="" class="language-plaintext">PasswordAuthentication no</code></pre>
+<pre class="language-plaintext" data-language="plaintext"><code class="language-plaintext">PasswordAuthentication no</code></pre>
 <p>И перезагружаем ssh-демон.</p>
-<pre class="language-bash"><code is:raw="" class="language-bash">systemctl restart sshd</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">systemctl restart sshd</code></pre>
 <p>Такое действие делают на серверах, что бы хакеры через подбор не взломали ваш ssh.</p>
 <hr>
 <h1 id="armbian-config">armbian-config</h1>
 <p>Теперь поставим программы которые предлагает <code>armbian</code></p>
 <p>Вводим команду</p>
-<pre class="language-bash"><code is:raw="" class="language-bash">armbian-config</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">armbian-config</code></pre>
 <p><img src="/images/blog/home-pi/01-home-pi.webp" alt="armbian-config"></p>
 <p>В окне, выбираем <code>Software</code>, <code>Softy</code> и для начала ставим галочки возле <code>transmission</code> и <code>docker</code>.</p>
 <p><img src="/images/blog/home-pi/02-home-pi.webp" alt="armbian-config-softy"></p>
 <p>Ещё почему то не установился <code>docker-compose</code>, поэтому ставим его руками:</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">docker-compose</span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">docker-compose</span></code></pre>
 <p>Подготовка - закончена.</p>
 <h1 id="transmission-cli">Transmission-cli</h1>
 <p>Для начала разберёмся с демоном <code>transmission</code> - который будет автоматически скачивать торренты которые мы ему будем давать.</p>
@@ -174,23 +97,23 @@
 <p>Настроим демон.</p>
 <p>Добавляем демон, и ставим ему автостарт.
 После проверяем что все включилось.</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">sudo</span> /etc/init.d/transmission-daemon start
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> /etc/init.d/transmission-daemon start
 <span class="token function">sudo</span> update-rc.d transmission-daemon defaults
 <span class="token function">sudo</span> <span class="token function">service</span> --status-all</code></pre>
 <p>Если не было, он создаст папку <code>/etc/transmission-daemon</code> в которой нас сейчас интересует файл <code>settings.json</code>.</p>
 <p>Поправим там несколько значений.</p>
 <p>Добавим список IP в блоклист, что бы не подцепить вирус.</p>
-<pre class="language-json"><code is:raw="" class="language-json"><span class="token property">"blocklist-enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token property">"blocklist-url"</span><span class="token operator">:</span> <span class="token string">"http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&#x26;fileformat=p2p&#x26;archiveformat=gz"</span><span class="token punctuation">,</span></code></pre>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token property">"blocklist-enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token property">"blocklist-url"</span><span class="token operator">:</span> <span class="token string">"http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&amp;fileformat=p2p&amp;archiveformat=gz"</span><span class="token punctuation">,</span></code></pre>
 <p>Папка куда будут сохраняться торренты</p>
-<pre class="language-json"><code is:raw="" class="language-json"><span class="token property">"download-dir"</span><span class="token operator">:</span> <span class="token string">"/home/pi/Download/torrent"</span><span class="token punctuation">,</span>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token property">"download-dir"</span><span class="token operator">:</span> <span class="token string">"/home/pi/Download/torrent"</span><span class="token punctuation">,</span>
 <span class="token property">"incomplete-dir"</span><span class="token operator">:</span> <span class="token string">"/home/pi/Download/torrent/incomplete"</span><span class="token punctuation">,</span>
 <span class="token property">"incomplete-dir-enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></code></pre>
 <p>Папка которая будет следить за появлением новых торрент файлов</p>
-<pre class="language-json"><code is:raw="" class="language-json"><span class="token property">"watch-dir"</span><span class="token operator">:</span> <span class="token string">"/home/pi/Download/src"</span><span class="token punctuation">,</span>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token property">"watch-dir"</span><span class="token operator">:</span> <span class="token string">"/home/pi/Download/src"</span><span class="token punctuation">,</span>
 <span class="token property">"watch-dir-enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></code></pre>
 <p>Если надо, добавляем логин и пароль. Пароль будет зашифрован при перезапуске.</p>
-<pre class="language-json"><code is:raw="" class="language-json"><span class="token property">"rpc-authentication-required"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token property">"rpc-authentication-required"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 <span class="token property">"rpc-username"</span><span class="token operator">:</span> <span class="token string">"pi"</span><span class="token punctuation">,</span>
 <span class="token property">"rpc-password"</span><span class="token operator">:</span> <span class="token string">"secret"</span><span class="token punctuation">,</span>
 <span class="token property">"rpc-whitelist-enabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></code></pre>
@@ -198,16 +121,16 @@
 <li><code>rpc-whitelist-enabled</code> - тут аккуратнее, настройка нужна если хост не проходит</li>
 </ul>
 <p>Рестартуем демон.</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">sudo</span> <span class="token function">service</span> transmission-daemon restart</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">service</span> transmission-daemon restart</code></pre>
 <p>И маленький нюанс, если порт не менять, то адрес в веб интерфейсе при запуске будет:</p>
 <p><code>http://pi.loc:9091/transmission/web/</code> - слеш на конце <strong>обязателен</strong>!</p>
 <h1 id="heimdall">Heimdall</h1>
 <p><code>Heimdall</code> - это доска со списком ссылок на ваши приложения. Написан на PHP потому практически не жрёт память.</p>
 <p>Для начала делаем папку для конфига и заходим в неё.</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">mkdir</span> ~/heimdall
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ~/heimdall
 <span class="token builtin class-name">cd</span> ~/heimdall</code></pre>
 <p>Создаём файл <code>docker-compose.yml</code> - с вот таким содержанием:</p>
-<pre class="language-yml"><code is:raw="" class="language-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<pre class="language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
 <span class="token key atrule">services</span><span class="token punctuation">:</span>
   <span class="token key atrule">heimdall</span><span class="token punctuation">:</span>
     <span class="token key atrule">image</span><span class="token punctuation">:</span> linuxserver/heimdall<span class="token punctuation">:</span>latest
@@ -225,7 +148,7 @@
     <span class="token comment"># Контейнер будет автоматически рестартовать, до тех пор пока вы не отсановите его вручную</span>
     <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped</code></pre>
 <p>Стартуем контейнер:</p>
-<pre class="language-bash"><code is:raw="" class="language-bash"><span class="token function">sudo</span> <span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span></code></pre>
 <p>Если все прошло успешно, поздравляю. Теперь вы можете в браузере набрать <code>http://pi.loc</code> (Об этом адресе я писал выше, это алиас на IP мини-компа).</p>
 <p><img src="/images/blog/home-pi/03-home-pi.webp" alt="heimdall"></p>
 <h2 id="добавление-ссылок-на-приложения">Добавление ссылок на приложения</h2>
@@ -239,33 +162,7 @@
 <p>Настройка завершена.</p>
 <p>Теперь закинув торрен в веб интерфейс можете начать скачивать файлы.</p>
 <p>А если есть желание, то можно настроить доставку файлов в паку за которой будет следить <code>transmission</code>.</p>
-      </article>
-    </main>
-
-    <footer class="container max-w-4xl py-8 mx-auto mt-16 mb-8 border-t border-b border-gray-200 dark:border-gray-700 md:px-0">
-  <div class="flex px-6 md:space-x-24">
-    <div class="flex flex-col w-full space-y-4 md:space-y-0 md:flex-row" aria-label="Footer page navigation">
-  <a class="flex w-10/12 sm:w-1/2" href="/blog/2020/06-vue-store-mock" title="Vuex + Jest.mock">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="truncate">Vuex + Jest.mock</span>
-      </a>
-  
-  <a class="flex justify-end w-10/12 sm:w-1/2" href="/blog/2022/08-pi-monitorrent" title="🍊 Настройка Monitorrent на Orange PI">
-        <span class="truncate">🍊 Настройка Monitorrent на Orange PI</span>
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-</div>
-    <div>
-  <a href="https://avil13.com/blog/2022/07-home-pi-server/" id="share-page" class="hidden">
-    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
-    </svg>
-  </a>
-
-  
-</div>
-  </div>
-</footer>
-    <script type="application/ld+json">{
+</article></main><footer class="container max-w-4xl py-8 mx-auto mt-16 mb-8 border-t border-b border-gray-200 dark:border-gray-700 md:px-0"><div class="flex px-6 md:space-x-24"><div class="flex flex-col w-full space-y-4 md:space-y-0 md:flex-row" aria-label="Footer page navigation"><a class="flex w-10/12 sm:w-1/2" href="/blog/2020/06-vue-store-mock" title="Vuex + Jest.mock"><span aria-hidden="true">&laquo;</span><span class="truncate">Vuex + Jest.mock</span></a><a class="flex justify-end w-10/12 sm:w-1/2" href="/blog/2022/08-pi-monitorrent" title="🍊 Настройка Monitorrent на Orange PI"><span class="truncate">🍊 Настройка Monitorrent на Orange PI</span><span aria-hidden="true">&raquo;</span></a></div><div><a href="https://avil13.com/blog/2022/07-home-pi-server/" id="share-page" class="hidden"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path></svg></a><script type="module">(async()=>{if(!navigator.share)return;let e=document.querySelector(`title`)?.innerText||``,t=document.querySelector(`meta[name="description"]`)?.getAttribute(`content`)||``,n=document.querySelector(`link[rel="canonical"]`)?.getAttribute(`href`)||location.href,r=document.getElementById(`share-page`);r?.classList.toggle(`hidden`,!1),r?.addEventListener(`click`,r=>{r.preventDefault(),r.stopPropagation(),navigator.share({title:e,text:t,url:n}).then(()=>console.log(`Successful share`)).catch(e=>console.log(`Error sharing`,e))})})();</script></div></div></footer><script type="application/ld+json">{
  "@context": "https://schema.org/",
  "@type": "BlogPosting",
  "author": {
@@ -281,17 +178,4 @@
   "jobTitle": "web-developer",
   "url": "https://avil13.com"
  }
-}</script>
-
-
-    <script>
-        (async () => {
-          window.addEventListener("load", () => {
-            if ("serviceWorker" in navigator) {
-              navigator.serviceWorker.register("/service-worker.js");
-            }
-          });
-        })();
-      </script>
-  </body>
-</html>
+}</script><script type="module">(async()=>{window.addEventListener(`load`,()=>{`serviceWorker`in navigator&&navigator.serviceWorker.register(`/service-worker.js`)})})();</script></body></html>
